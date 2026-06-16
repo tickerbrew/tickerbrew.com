@@ -6,129 +6,334 @@
   <title>Market News Archive | TickerBrew</title>
   <meta name="description" content="Daily market intelligence archive — Fed policy, AI stocks, earnings, and macro news from TickerBrew.">
   <link rel="canonical" href="https://tickerbrew.com/archive/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
   <style>
-    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    body{font-family:Georgia,'Times New Roman',serif;font-size:18px;line-height:1.7;color:#1a1a1a;background:#fff}
-    header{border-bottom:3px solid #1a1a1a;padding:16px 24px}
-    header a{font-family:'Helvetica Neue',Arial,sans-serif;font-size:22px;font-weight:700;letter-spacing:-0.5px;color:#1a1a1a;text-decoration:none}
-    .container{max-width:760px;margin:0 auto;padding:48px 24px 80px}
-    h1{font-size:clamp(28px,5vw,42px);font-weight:700;letter-spacing:-0.5px;margin-bottom:8px}
-    .subtitle{font-family:'Helvetica Neue',Arial,sans-serif;font-size:15px;color:#888;margin-bottom:40px}
-    .card{display:block;padding:24px 0;border-bottom:1px solid #e0e0e0;text-decoration:none;color:inherit}
-    .card:hover h2{text-decoration:underline}
-    .card-date{font-family:'Helvetica Neue',Arial,sans-serif;font-size:12px;color:#888;text-transform:uppercase;letter-spacing:.05em}
-    .card h2{font-size:22px;font-weight:700;margin:6px 0 8px;line-height:1.3}
-    .card p{font-size:15px;color:#555;margin:0}
-    footer{border-top:1px solid #e0e0e0;padding:32px 24px;text-align:center;font-family:'Helvetica Neue',Arial,sans-serif;font-size:13px;color:#888}
-    footer a{color:#888}
-    @media (max-width:600px){.container{padding:32px 16px 60px}}
+    :root {
+      --bg: #050505;
+      --surface: #0d0d0d;
+      --surface-2: #141414;
+      --surface-3: #1a1a1a;
+      --border: rgba(255,255,255,.07);
+      --green: #22C55E;
+      --green-light: #4ade80;
+      --green-dim: rgba(34,197,94,.12);
+      --green-glow: rgba(34,197,94,.25);
+      --white: #f5f5f5;
+      --muted: #a0a0a0;
+      --muted-2: #666;
+    }
+
+    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body {
+      background:var(--bg);
+      color:var(--white);
+      font-family:'Inter', sans-serif;
+      overflow-x:hidden;
+      line-height:1.6;
+      -webkit-font-smoothing:antialiased;
+    }
+
+    body::before {
+      content:"";
+      position:fixed;
+      inset:0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.035'/%3E%3C/svg%3E");
+      pointer-events:none;
+      z-index:100;
+      opacity:.4;
+    }
+
+    /* NAV */
+    nav {
+      position:fixed;
+      top:0; left:0; right:0;
+      z-index:1000;
+      height:110px;
+      background:rgba(5,5,5,.88);
+      backdrop-filter:blur(24px) saturate(180%);
+      -webkit-backdrop-filter:blur(24px) saturate(180%);
+      border-bottom:1px solid var(--border);
+    }
+    .nav-inner {
+      max-width:1200px;
+      height:100%;
+      margin:0 auto;
+      padding:0 28px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+    }
+    .logo-img { height:100px; width:auto; display:block; }
+    .nav-links {
+      display:flex;
+      gap:32px;
+      align-items:center;
+    }
+    .nav-links a {
+      color:var(--muted);
+      text-decoration:none;
+      font-size:.88rem;
+      font-weight:500;
+      letter-spacing:.01em;
+      transition:color .15s ease;
+    }
+    .nav-links a:hover { color:var(--white); }
+    .nav-links a.active { color:var(--green); }
+    .nav-btn {
+      background:var(--green) !important;
+      color:#000 !important;
+      padding:10px 22px;
+      border-radius:8px;
+      font-weight:700 !important;
+      font-size:.88rem !important;
+      white-space:nowrap;
+      flex-shrink:0;
+      transition:background .15s ease, transform .15s ease !important;
+    }
+    .nav-btn:hover {
+      background:var(--green-light) !important;
+      transform:translateY(-1px);
+    }
+
+    /* PAGE HEADER */
+    .page-header {
+      padding:160px 28px 60px;
+      max-width:1200px;
+      margin:0 auto;
+    }
+    .page-header .label {
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      background:var(--green-dim);
+      border:1px solid var(--green-glow);
+      border-radius:100px;
+      padding:6px 16px;
+      font-size:.75rem;
+      font-weight:600;
+      color:var(--green);
+      letter-spacing:.05em;
+      text-transform:uppercase;
+      margin-bottom:24px;
+    }
+    .label-dot {
+      width:6px; height:6px;
+      background:var(--green);
+      border-radius:50%;
+      animation:pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%,100% { opacity:1; }
+      50% { opacity:.4; }
+    }
+    .page-header h1 {
+      font-size:clamp(2rem, 5vw, 3.5rem);
+      font-weight:800;
+      letter-spacing:-.03em;
+      line-height:1.1;
+      margin-bottom:16px;
+    }
+    .page-header h1 span { color:var(--green); }
+    .page-header p {
+      color:var(--muted);
+      font-size:1rem;
+      max-width:500px;
+    }
+
+    /* ARCHIVE GRID */
+    .archive-container {
+      max-width:1200px;
+      margin:0 auto;
+      padding:0 28px 100px;
+    }
+    .archive-grid {
+      display:grid;
+      grid-template-columns:repeat(auto-fill, minmax(360px, 1fr));
+      gap:20px;
+    }
+    .card {
+      display:block;
+      background:var(--surface);
+      border:1px solid var(--border);
+      border-radius:16px;
+      padding:28px;
+      text-decoration:none;
+      color:inherit;
+      transition:border-color .2s ease, transform .2s ease, background .2s ease;
+      position:relative;
+      overflow:hidden;
+    }
+    .card::before {
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(135deg, var(--green-dim) 0%, transparent 60%);
+      opacity:0;
+      transition:opacity .2s ease;
+      pointer-events:none;
+    }
+    .card:hover {
+      border-color:var(--green-glow);
+      transform:translateY(-2px);
+      background:var(--surface-2);
+    }
+    .card:hover::before { opacity:1; }
+    .card-date {
+      font-size:.72rem;
+      font-weight:600;
+      color:var(--green);
+      text-transform:uppercase;
+      letter-spacing:.08em;
+      margin-bottom:12px;
+    }
+    .card h2 {
+      font-size:1rem;
+      font-weight:700;
+      line-height:1.4;
+      color:var(--white);
+      margin-bottom:10px;
+      letter-spacing:-.01em;
+    }
+    .card p {
+      font-size:.83rem;
+      color:var(--muted);
+      line-height:1.6;
+      display:-webkit-box;
+      -webkit-line-clamp:3;
+      -webkit-box-orient:vertical;
+      overflow:hidden;
+    }
+    .card-arrow {
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      margin-top:16px;
+      font-size:.78rem;
+      font-weight:600;
+      color:var(--green);
+      opacity:0;
+      transform:translateX(-4px);
+      transition:opacity .2s ease, transform .2s ease;
+    }
+    .card:hover .card-arrow {
+      opacity:1;
+      transform:translateX(0);
+    }
+
+    /* CTA STRIP */
+    .cta-strip {
+      background:var(--surface);
+      border:1px solid var(--border);
+      border-top:1px solid var(--green-glow);
+      padding:48px 28px;
+      text-align:center;
+      margin:0 0 0 0;
+    }
+    .cta-strip h3 {
+      font-size:1.4rem;
+      font-weight:700;
+      letter-spacing:-.02em;
+      margin-bottom:8px;
+    }
+    .cta-strip h3 span { color:var(--green); }
+    .cta-strip p {
+      color:var(--muted);
+      font-size:.9rem;
+      margin-bottom:24px;
+    }
+    .cta-strip a {
+      display:inline-block;
+      background:var(--green);
+      color:#000;
+      font-weight:700;
+      font-size:.9rem;
+      padding:12px 28px;
+      border-radius:10px;
+      text-decoration:none;
+      transition:background .15s ease, transform .15s ease;
+    }
+    .cta-strip a:hover {
+      background:var(--green-light);
+      transform:translateY(-1px);
+    }
+
+    /* FOOTER */
+    footer {
+      max-width:1200px;
+      margin:0 auto;
+      padding:32px 28px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      border-top:1px solid var(--border);
+      font-size:.8rem;
+      color:var(--muted-2);
+    }
+    footer a { color:var(--muted-2); text-decoration:none; }
+    footer a:hover { color:var(--muted); }
+    .footer-links { display:flex; gap:20px; }
+
+    @media(max-width:680px) {
+      nav { height:76px; }
+      .logo-img { height:70px; }
+      .nav-links { display:none; }
+      .page-header { padding:110px 20px 40px; }
+      .archive-container { padding:0 20px 80px; }
+      .archive-grid { grid-template-columns:1fr; }
+      footer { flex-direction:column; gap:12px; text-align:center; }
+    }
   </style>
 </head>
 <body>
-<header><a href="https://tickerbrew.com">TickerBrew</a></header>
-<div class="container">
-  <h1>Market News Archive</h1>
-  <p class="subtitle">16 articles &middot; updated daily</p>
-  
-  <a href="/archive/iran-deal-doubt-spacex-ipo-growth-debate.html" class="card">
-    <span class="card-date">June 14, 2026</span>
-    <h2>Iran Deal Crumbles, SpaceX Soars: Geopolitics & Growth Stocks</h2>
-    <p>U.S.-Iran peace deal faces collapse amid Israeli strikes. SpaceX IPO shows strong growth appetite, but Fed policy looms. Key market shifts and analyst picks.</p>
-  </a>
 
-  <a href="/archive/iran-deal-teeters-spacex-soars-amid-strikes.html" class="card">
-    <span class="card-date">June 14, 2026</span>
-    <h2>Iran Deal in Peril, SpaceX IPO Soars: Market Contradictions</h2>
-    <p>Mideast tensions escalate as Israel strikes Lebanon, jeopardizing a U.S.-Iran peace deal. Meanwhile, SpaceX's $2.1 trillion IPO highlights robust investor appetite for growth despite geopolitical risks. The Fed's upcoming meeting will test market resilience.</p>
-  </a>
+<nav>
+  <div class="nav-inner">
+    <a href="https://tickerbrew.com">
+      <img src="/favicon.png" alt="TickerBrew" class="logo-img">
+    </a>
+    <div class="nav-links">
+      <a href="/#why">Why TickerBrew</a>
+      <a href="/#how-it-works">How It Works</a>
+      <a href="/#faq">FAQ</a>
+      <a href="/archive/" class="active">Archive</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+      <a href="/#cta" class="nav-btn">Get Free Access &rarr;</a>
+    </div>
+  </div>
+</nav>
 
-  <a href="/archive/mideast-tensions-flare-fed-looms-spacex-soars.html" class="card">
-    <span class="card-date">June 14, 2026</span>
-    <h2>Geopolitical Risks Rise, Fed Decision Nears, SpaceX IPO Shines</h2>
-    <p>Geopolitical tensions escalate as Israel strikes Lebanon, jeopardizing a US-Iran peace deal. Meanwhile, SpaceX's IPO shows investor appetite for growth, with the Fed's rate decision next.</p>
-  </a>
-
-  <a href="/archive/iran-deal-doubt-fed-looms.html" class="card">
-    <span class="card-date">June 14, 2026</span>
-    <h2>Iran Deal in Doubt, Fed Meeting Looms: What Investors Need to Know</h2>
-    <p>Middle East tensions escalate as Israel strikes Lebanon, jeopardizing a U.S.-Iran peace deal. Markets await Fed signals, while analysts eye key growth stocks.</p>
-  </a>
-
-  <a href="/archive/iran-deal-falters-spacex-fed-crossroads.html" class="card">
-    <span class="card-date">June 14, 2026</span>
-    <h2>Iran Deal Uncertainty, SpaceX IPO, Fed Meeting: Markets at Crossroads</h2>
-    <p>Geopolitical tensions rise as a U.S.-Iran peace deal teeters. SpaceX's IPO shows investor hunger for growth, but the Fed's upcoming meeting could shift market sentiment. TickerBrew analyzes the forces at play.</p>
-  </a>
-
-  <a href="/archive/spacex-record-ipo-fed-warsh-silence-global-growth.html" class="card">
-    <span class="card-date">June 12, 2026</span>
-    <h2>SpaceX IPO $2 Trillion, Fed Warsh Silence, Global Growth Cuts</h2>
-    <p>SpaceX makes a record-setting Nasdaq debut, valued over $2 trillion. New Fed Chair Kevin Warsh hints at less market guidance. Global growth forecasts cut amid rising inflation.</p>
-  </a>
-
-  <a href="/archive/spacex-ipo-global-growth-ecb-hikes.html" class="card">
-    <span class="card-date">June 11, 2026</span>
-    <h2>SpaceX IPO Soars, Global Growth Dims, ECB Hikes Rates</h2>
-    <p>SpaceX launches a record-setting $75 billion IPO amid regulatory scrutiny. The World Bank cuts global growth forecasts, while the ECB hikes rates to combat war-driven inflation.</p>
-  </a>
-
-  <a href="/archive/trump-inflation-fed-iran-oil-ai.html" class="card">
-    <span class="card-date">June 10, 2026</span>
-    <h2>Trump's Inflation View, Iran Strikes, & AI IPOs Shake Global Markets</h2>
-    <p>President Trump's surprising inflation comments impact Fed rate cut expectations. US strikes Iran, sending oil prices higher and Wall Street lower. AI IPOs signal a new market frontier.</p>
-  </a>
-
-  <a href="/archive/china-inflation-oil-geopolitics-central-banks.html" class="card">
-    <span class="card-date">June 9, 2026</span>
-    <h2>Global Inflation Heats Up: China PPI, Iran Strikes, Central Bank Moves</h2>
-    <p>China's wholesale inflation hits a near 4-year high, fueled by Iran war and AI demand. Dollar steady as US strikes Iran. BOJ faces pressure for hikes.</p>
-  </a>
-
-  <a href="/archive/ai-infrastructure-corning-surge-hormuz-tensions.html" class="card">
-    <span class="card-date">June 8, 2026</span>
-    <h2>Corning Soars on Amazon AI Deal, Hormuz Tensions Impact Markets</h2>
-    <p>Amazon's multi-billion dollar AI data center deal sends Corning shares soaring. Geopolitical tensions in the Strait of Hormuz keep energy and supply chain concerns elevated.</p>
-  </a>
-
-  <a href="/archive/gulf-tensions-jobs-surge-dow-record-tech-dip.html" class="card">
-    <span class="card-date">June 5, 2026</span>
-    <h2>Iran-US Tensions, Strong Jobs Data, Dow Record: Market Divergence</h2>
-    <p>Iran fires warning missiles in Gulf of Oman, escalating geopolitical risk. US jobs report beats expectations, fueling Dow's record high. Tech stocks dip as investors rotate to healthcare.</p>
-  </a>
-
-  <a href="/archive/ai-shifting-sands-tech-bets-redefined.html" class="card">
-    <span class="card-date">June 4, 2026</span>
-    <h2>AI's Shifting Sands: Tech Bets Redefined by Layoffs, Misses, Futures</h2>
-    <p>Amazon faces engineer backlash over AI spending amid layoffs. Broadcom stumbles despite AI boom. Coinbase launches SpaceX pre-IPO futures. Private equity liquidity concerns rise.</p>
-  </a>
-
-  <a href="/archive/global-slowdown-inflation-yen-tungsten-shock.html" class="card">
-    <span class="card-date">June 3, 2026</span>
-    <h2>OECD Warns Global Slowdown, Inflation Spike; Yen Intervention, Tungsten Crisis</h2>
-    <p>OECD cuts global growth outlook, warns of higher inflation due to Middle East conflict. Japan intervenes to support yen. Tungsten supply shock looms.</p>
-  </a>
-
-  <a href="/archive/cybersecurity-rally-geopolitical-risks-crypto-disruption.html" class="card">
-    <span class="card-date">June 2, 2026</span>
-    <h2>Cybersecurity Surges, Iran Tensions Rise, Crypto Disrupts Wall Street</h2>
-    <p>Palo Alto Networks surges on strong earnings and AI demand. Iran mines the Strait of Hormuz, escalating tensions. CFTC approval of Bitcoin perpetual futures shakes traditional exchanges.</p>
-  </a>
-
-  <a href="/archive/anthropic-ipo-ignites-ai-market-race.html" class="card">
-    <span class="card-date">June 1, 2026</span>
-    <h2>Anthropic IPO: AI's Public Market Test Begins, Powell Warns Fed</h2>
-    <p>AI giant Anthropic confidentially files for IPO, setting up a landmark deal. Former Fed Chair Powell warns on central bank independence. Nvidia's new chip fuels software rally.</p>
-  </a>
-
-  <a href="/archive/fed-dissent-oil-hopes-ai-market-dominance.html" class="card">
-    <span class="card-date">May 29, 2026</span>
-    <h2>Fed Dissent, Oil Hopes, and AI's Explosive Growth Drive Today's Markets</h2>
-    <p>Fed Governor Bowman questions rate hikes amid inflation, oil prices fall on Hormuz hopes, and Japan intervenes in yen. Dell's AI server revenue soars, while Nvidia invests in photonics.</p>
-  </a>
+<div class="page-header">
+  <div class="label"><span class="label-dot"></span>Updated Daily</div>
+  <h1>Market News <span>Archive</span></h1>
+  <p>Every morning brief, indexed and searchable. Fed policy, AI stocks, macro shifts, and institutional moves.</p>
 </div>
+
+<div class="archive-container">
+  <div class="archive-grid" id="archive-grid">
+    <!-- Articles injected here by n8n / regenerated on each run -->
+  </div>
+</div>
+
+<div class="cta-strip">
+  <h3>Get tomorrow's edge <span>before the market opens.</span></h3>
+  <p>Join 1,200+ investors who wake up with TickerBrew. Free, every weekday morning.</p>
+  <a href="/#cta">Get Free Access &rarr;</a>
+</div>
+
 <footer>
-  <p><a href="https://tickerbrew.com">TickerBrew</a> &nbsp;&middot;&nbsp; <a href="https://tickerbrew.com/archive/">Archive</a></p>
-  <p style="margin-top:8px">&copy; 2026 TickerBrew. All rights reserved.</p>
+  <span>&copy; 2026 TickerBrew &mdash; Stay sharp. Stay brewed.</span>
+  <div class="footer-links">
+    <a href="/archive/">Archive</a>
+    <a href="/about.html">About</a>
+    <a href="/privacy.html">Privacy</a>
+    <a href="/terms.html">Terms</a>
+    <a href="/disclaimer.html">Disclaimer</a>
+  </div>
 </footer>
+
 </body>
 </html>
