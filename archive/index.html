@@ -100,7 +100,7 @@
 <div class="page-header">
   <div class="label"><span class="label-dot"></span>Updated Daily</div>
   <h1>Market News <span>Archive</span></h1>
-  <p class="subtitle">20 articles &middot; updated daily</p>
+  <p class="subtitle">21 articles &middot; updated daily</p>
 </div>
 
 <div class="filters" id="filters">
@@ -135,6 +135,14 @@
     <h2>SpaceX Plunges, Hormuz Stalls: Tech &amp; Geopolitical Risks Brew</h2>
     <p>SpaceX stock plunges 16% post-IPO, while shipping stalls in the Strait of Hormuz. Global markets face tech valuation skepticism and rising geopolitical risks. Get TickerBrew's take.</p>
     <div class="card-tags"><span class="card-tag">Equities</span><span class="card-tag">Tech &amp; AI</span><span class="card-tag">Geopolitics</span><span class="card-tag">Oil &amp; Energy</span></div>
+    <span class="card-arrow">Read article &rarr;</span>
+  </a>
+
+  <a href="/archive/spacex-ipo-hormuz-tesla-probe-market-shake.html" class="card" data-tags="Equities|Geopolitics|Oil &amp; Energy|Tech &amp; AI">
+    <div class="card-date">June 22, 2026</div>
+    <h2>SpaceX Plunge, Hormuz Snags, Tesla Probe: Markets Brace for Impact</h2>
+    <p>SpaceX shares plunge post-IPO, Strait of Hormuz shipping stalls, and Tesla faces a federal probe. Market volatility rises amid geopolitical and regulatory risks.</p>
+    <div class="card-tags"><span class="card-tag">Equities</span><span class="card-tag">Geopolitics</span><span class="card-tag">Oil &amp; Energy</span><span class="card-tag">Tech &amp; AI</span></div>
     <span class="card-arrow">Read article &rarr;</span>
   </a>
 
@@ -301,26 +309,38 @@
     var cards = document.querySelectorAll('.card');
     var emptyState = document.getElementById('empty-state');
 
+    function filterByTag(tag) {
+      pills.forEach(function(p) { p.classList.remove('active'); });
+      var matchPill = Array.from(pills).find(function(p) {
+        return p.getAttribute('data-tag') === tag;
+      });
+      if (matchPill) matchPill.classList.add('active');
+
+      var visibleCount = 0;
+      cards.forEach(function(card) {
+        var cardTags = (card.getAttribute('data-tags') || '').split('|');
+        if (tag === 'all' || cardTags.indexOf(tag) !== -1) {
+          card.style.display = '';
+          visibleCount++;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+
+      emptyState.classList.toggle('show', visibleCount === 0);
+    }
+
     pills.forEach(function(pill) {
       pill.addEventListener('click', function() {
-        pills.forEach(function(p) { p.classList.remove('active'); });
-        pill.classList.add('active');
-        var tag = pill.getAttribute('data-tag');
-        var visibleCount = 0;
-
-        cards.forEach(function(card) {
-          var cardTags = (card.getAttribute('data-tags') || '').split('|');
-          if (tag === 'all' || cardTags.indexOf(tag) !== -1) {
-            card.classList.remove('hidden');
-            visibleCount++;
-          } else {
-            card.classList.add('hidden');
-          }
-        });
-
-        emptyState.classList.toggle('show', visibleCount === 0);
+        filterByTag(pill.getAttribute('data-tag'));
       });
     });
+
+    // Auto-activate tag from URL e.g. /archive/?tag=Tech+%26+AI
+    var urlTag = new URLSearchParams(window.location.search).get('tag');
+    if (urlTag) {
+      filterByTag(urlTag);
+    }
   })();
 </script>
 
