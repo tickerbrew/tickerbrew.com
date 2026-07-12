@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="apple-touch-icon" href="/favicon.png" />
+  <title>AI Market Shifts: Tech Giants Face Scrutiny Amid Layoffs</title>
+  <meta name="description" content="Explore the evolving AI market shifts as tech giants like Amazon face dissent over spending amidst layoffs, while others navigate intense competition and…">
+  <link rel="canonical" href="https://tickerbrew.com/archive/ai-shifting-sands-tech-bets-redefined.html">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="AI Market Shifts: Tech Giants Face Scrutiny Amid Layoffs">
+  <meta property="og:description" content="Explore the evolving AI market shifts as tech giants like Amazon face dissent over spending amidst layoffs, while others navigate intense competition and…">
+  <meta property="og:url" content="https://tickerbrew.com/archive/ai-shifting-sands-tech-bets-redefined.html">
+  <meta property="og:site_name" content="TickerBrew">
+  <meta property="og:image" content="https://tickerbrew.com/og-image.jpg">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AI Market Shifts: Tech Giants Face Scrutiny Amid Layoffs">
+  <meta name="twitter:description" content="Explore the evolving AI market shifts as tech giants like Amazon face dissent over spending amidst layoffs, while others navigate intense competition and…">
+  <meta name="twitter:image" content="https://tickerbrew.com/og-image.jpg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#050505;--surface:#0d0d0d;--surface-2:#141414;--surface-3:#1a1a1a;
+      --border:rgba(255,255,255,.07);--border-strong:rgba(255,255,255,.14);
+      --green:#22C55E;--green-light:#4ade80;--green-dim:rgba(34,197,94,.12);--green-glow:rgba(34,197,94,.25);
+      --white:#f5f5f5;--muted:#a0a0a0;--muted-2:#666;
+      --serif:Georgia,'Times New Roman',serif;
+    }
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{background:var(--bg);color:var(--white);font-family:'Inter',sans-serif;line-height:1.75;-webkit-font-smoothing:antialiased}
+    a{color:inherit}
+    .wrap{max-width:760px;margin:0 auto;padding:0 24px}
+    .wrap-wide{max-width:1080px;margin:0 auto;padding:0 24px}
+
+    nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:90px;background:rgba(5,5,5,.88);backdrop-filter:blur(24px) saturate(180%);border-bottom:1px solid var(--border)}
+    .nav-inner{max-width:1200px;height:100%;margin:0 auto;padding:0 28px;display:flex;align-items:center;justify-content:space-between}
+    .logo-img{height:80px;width:auto;display:block}
+    .nav-links{display:flex;gap:32px;align-items:center}
+    .nav-links a{color:var(--muted);text-decoration:none;font-size:.88rem;font-weight:500;transition:color .15s ease}
+    .nav-links a:hover{color:var(--white)}
+    .nav-links a.active{color:var(--green)}
+    .nav-btn{background:var(--green)!important;color:#000!important;padding:10px 22px;border-radius:8px;font-weight:700!important;font-size:.88rem!important;white-space:nowrap;flex-shrink:0;transition:background .15s ease,transform .15s ease!important}
+    .nav-btn:hover{background:var(--green-light)!important;transform:translateY(-1px)}
+
+    .crumb{font-size:12px;color:var(--muted);padding:130px 0 0 0}
+    .crumb a{text-decoration:none}
+    .crumb a:hover{color:var(--white)}
+
+    .hero{padding:18px 0 30px 0;border-bottom:1px solid var(--border);position:relative}
+    .eyebrow{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--green-light);margin:0 0 14px 0;display:flex;align-items:center;gap:8px}
+    .eyebrow .dot{width:5px;height:5px;border-radius:50%;background:var(--green)}
+    h1.headline{font-family:var(--serif);font-size:38px;line-height:1.18;font-weight:700;color:var(--white);margin:0 0 14px 0;letter-spacing:-.01em}
+    .dek{font-size:18px;line-height:1.6;color:var(--muted);margin:0 0 22px 0;max-width:640px}
+    .meta-row{display:flex;flex-wrap:wrap;align-items:center;gap:18px;font-size:12.5px;color:var(--muted);margin-bottom:18px}
+    .meta-row .sep{color:var(--border-strong)}
+    .tags{display:flex;flex-wrap:wrap;gap:8px}
+    .tag{font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;border:1px solid var(--border-strong);color:var(--muted);padding:5px 11px;border-radius:20px;text-decoration:none;background:var(--surface)}
+    .tag:hover{border-color:var(--green);color:var(--green-light)}
+
+    .gauge{display:flex;align-items:center;gap:8px}
+    .gauge svg{display:block}
+    .gauge-label{display:flex;flex-direction:column;line-height:1.25}
+    .gauge-label .g-title{font-weight:700;color:var(--white);font-size:12.5px}
+    .gauge-label .g-sub{font-size:11px;color:var(--muted)}
+
+    .toc{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:18px 22px;margin:26px 0 8px 0}
+    .toc-title{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:0 0 12px 0}
+    .toc ol{margin:0;padding-left:20px}
+    .toc li{font-size:14.5px;line-height:1.9}
+    .toc a{text-decoration:none;color:var(--white);border-bottom:1px solid transparent}
+    .toc a:hover{color:var(--green-light);border-color:var(--green-light)}
+
+    article{padding-top:8px}
+    .section{padding:42px 0;border-bottom:1px solid var(--border);scroll-margin-top:110px}
+    .section:last-of-type{border-bottom:none}
+    .kicker{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--green-light);margin:0 0 10px 0}
+    h2.story{font-family:var(--serif);font-size:25px;line-height:1.32;font-weight:700;color:var(--white);margin:0 0 16px 0}
+    .section p{font-size:16px;line-height:1.78;color:#d4d4d4;margin:0 0 16px 0}
+    .section p:last-child{margin-bottom:0}
+    .source-link{font-size:13px;color:var(--muted)}
+    .source-link a{color:var(--green-light);text-decoration:none}
+    .source-link a:hover{text-decoration:underline}
+
+    .stat-box{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin:22px 0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:var(--surface)}
+    .stat{padding:16px 18px;border-right:1px solid var(--border)}
+    .stat:last-child{border-right:none}
+    .stat .num{font-family:var(--serif);font-size:22px;font-weight:700;color:var(--white)}
+    .stat .lab{font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-top:4px}
+
+    blockquote{margin:24px 0;padding:4px 0 4px 22px;border-left:3px solid var(--green);font-size:19px;line-height:1.55;font-style:italic;color:var(--white)}
+    blockquote cite{display:block;margin-top:10px;font-style:normal;font-size:12px;color:var(--muted)}
+
+    .why-box{background:var(--green-dim);border:1px solid var(--green-glow);border-radius:8px;padding:18px 22px;margin-top:18px}
+    .why-box .wlabel{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--green-light);margin:0 0 8px 0}
+    .why-box p{margin:0;color:#d4d4d4;font-size:15px}
+
+    .related{margin-top:20px;font-size:13px}
+    .related .rlabel{font-weight:700;color:var(--white);margin-right:8px}
+    .related a{color:var(--green-light);text-decoration:none}
+    .related a:hover{text-decoration:underline}
+    .related a:not(:last-child)::after{content:" · ";color:var(--border-strong)}
+
+    .sidebar-callout{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:20px 22px;margin:0}
+    .sidebar-callout p{font-size:14.5px;color:#d4d4d4;margin-bottom:14px}
+    .sidebar-callout p:last-child{margin-bottom:0}
+    .sidebar-callout strong{color:var(--white)}
+
+    .faq-item{border-bottom:1px solid var(--border)}
+    .faq-item:first-child{border-top:1px solid var(--border)}
+    .faq-q{width:100%;text-align:left;background:none;border:none;padding:18px 4px;font-family:var(--serif);font-size:16px;font-weight:700;color:var(--white);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px}
+    .faq-q .plus{font-size:18px;color:var(--green-light);transition:transform .2s ease;flex-shrink:0}
+    .faq-item.open .plus{transform:rotate(45deg)}
+    .faq-a{max-height:0;overflow:hidden;transition:max-height .25s ease}
+    .faq-item.open .faq-a{max-height:300px}
+    .faq-a p{padding:0 4px 18px 4px;margin:0;font-size:15px;line-height:1.7;color:#d4d4d4}
+
+    footer{max-width:1200px;margin:0 auto;padding:32px 28px;display:flex;align-items:center;justify-content:space-between;border-top:1px solid var(--border);font-size:.8rem;color:var(--muted-2)}
+    footer a{color:var(--muted-2);text-decoration:none}
+    footer a:hover{color:var(--muted)}
+    .footer-links{display:flex;gap:20px}
+
+    @media(max-width:680px){
+      nav{height:64px}.logo-img{height:54px}.nav-links{display:none}
+      .crumb{padding-top:84px}
+      h1.headline{font-size:28px}.dek{font-size:16px}
+      .stat-box{grid-template-columns:1fr}
+      .stat{border-right:none;border-bottom:1px solid var(--border)}
+      .stat:last-child{border-bottom:none}
+      footer{flex-direction:column;gap:12px;text-align:center}
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="https://tickerbrew.com">
+      <img class="logo-img" src="https://tickerbrew.com/nav-logo.png" alt="TickerBrew — Market Intelligence">
+    </a>
+    <div class="nav-links">
+      <a href="/#why">Why TickerBrew</a>
+      <a href="/#how-it-works">How It Works</a>
+      <a href="/#faq">FAQ</a>
+      <a href="/archive/" class="active">Archive</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+      <a href="/#cta" class="nav-btn">Get Free Access &rarr;</a>
+    </div>
+  </div>
+</nav>
+
+<div class="wrap">
+  <div class="crumb">
+    <a href="/archive/">Archive</a> &nbsp;/&nbsp; June 4, 2026
+  </div>
+
+  <div class="hero">
+    <p class="eyebrow"><span class="dot"></span>Morning Brew &nbsp;&middot;&nbsp; Markets &amp; Macro</p>
+    <h1 class="headline">AI Market Shifts: Tech Giants at a Crossroads Amid Spending Dissent and Competition</h1>
+    <p class="dek">The relentless march of artificial intelligence is reshaping corporate strategies and investor sentiment, creating a volatile landscape where companies grapple with internal dissent, intense competition, and the pressure to deliver concrete returns on their AI investments.</p>
+
+    <div class="meta-row">
+      <span>By the TickerBrew Markets Desk</span>
+      <span class="sep">|</span>
+      <span>June 4, 2026</span>
+      <span class="sep">|</span>
+      <span>8 min read</span>
+      <span class="sep">|</span>
+      <div class="gauge">
+        <svg width="26" height="30" viewBox="0 0 26 30" fill="none">
+          <path d="M3 4 H23 L20 25 Q20 28 16.5 28 H9.5 Q6 28 6 25 Z" stroke="#22C55E" stroke-width="1.6" fill="none"/>
+          <defs><clipPath id="cupclip"><path d="M4.2 5 H21.8 L19.2 24.6 Q19.2 26.6 16.4 26.6 H9.6 Q6.8 26.6 6.8 24.6 Z"/></clipPath></defs>
+          <rect x="3" y="9" width="20" height="20" fill="#22C55E" clip-path="url(#cupclip)"/>
+          <path d="M23 8 Q29 8 29 13 Q29 18 23 17" stroke="#22C55E" stroke-width="1.6" fill="none"/>
+        </svg>
+        <div class="gauge-label">
+          <span class="g-title">Complex Blend Discerning</span>
+          <span class="g-sub">Today's Brew Strength: Medium-Strong</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="tags">
+      <a class="tag" href="/archive/?tag=Tech%20%26%20AI">Tech &amp; AI</a>
+      <a class="tag" href="/archive/?tag=Equities">Equities</a>
+      <a class="tag" href="/archive/?tag=Crypto">Crypto</a>
+      <a class="tag" href="/archive/?tag=Earnings">Earnings</a>
+    </div>
+  </div>
+
+  <div class="toc">
+    <p class="toc-title">In Today's Issue</p>
+    <ol>
+      <li><a href="#amazon-ai-spending-dissent">Amazon Engineers Slam AI Spending Amid Layoffs</a></li>
+      <li><a href="#coinbase-spacex-futures">Coinbase Opens SpaceX Pre-IPO Futures Market</a></li>
+      <li><a href="#crowdstrike-beats-estimates-falls">CrowdStrike Beats Estimates, Stock Still Falls 10%</a></li>
+      <li><a href="#broadcom-revenue-miss">Broadcom's AI Boom Bets Clouded by Revenue Miss</a></li>
+    </ol>
+  </div>
+
+  <article>
+    
+    <section class="section" id="amazon-ai-spending-dissent">
+      <p class="kicker">Headline News</p>
+      <h2 class="story">Amazon Engineers Slam AI Spending Amid Layoffs</h2>
+      <p>Amazon is facing significant internal backlash from its engineering workforce regarding the company's ambitious $200 billion allocation towards AI infrastructure this year. This substantial investment comes at a time when Amazon has implemented widespread layoffs, impacting over 30,000 corporate employees since October. The dissent was publicly voiced during a Seattle City Council meeting, where local officials subsequently passed a proposal to impose a one-year moratorium on new mega data center developments within the city.</p>
+      <p>This situation underscores a growing tension between the rapid pursuit of AI advancements and the welfare of the existing workforce. While Amazon aims to solidify its position in the AI market, the optics of massive AI spending alongside job cuts have drawn criticism. The engineers' concerns highlight potential misalignment in corporate priorities, prompting questions about the balance between technological innovation and employee stability.</p>
+      <p>The Seattle City Council's decision to limit data center expansion reflects a broader trend of local governments scrutinizing the environmental and social impact of large tech operations. This regulatory move could set a precedent for other municipalities, potentially complicating future growth plans for tech giants dependent on extensive data center infrastructure to power their AI initiatives.</p>
+      
+      <div class="stat-box">
+        <div class="stat"><div class="num">$200 billion</div><div class="lab">AI infrastructure commitment</div></div>
+        <div class="stat"><div class="num">30,000+</div><div class="lab">Corporate employees laid off</div></div>
+      </div>
+      
+      
+      <div class="why-box">
+        <p class="wlabel">Why It Matters</p>
+        <p>This internal conflict and subsequent regulatory action signal increased scrutiny on tech companies' AI market shifts, particularly regarding their spending practices and labor policies. It could lead to more stringent regulations on data center expansion and greater pressure for corporations to balance innovation with social responsibility, potentially impacting long-term growth strategies.</p>
+      </div>
+    </section>
+
+    <section class="section" id="coinbase-spacex-futures">
+      <p class="kicker">Headline News</p>
+      <h2 class="story">Coinbase Opens SpaceX Pre-IPO Futures Market</h2>
+      <p>Coinbase has introduced an innovative pre-IPO perpetual futures product, providing investors with an unprecedented opportunity to gain early exposure to highly anticipated private companies, starting with SpaceX. This new offering, accessible via Coinbase Advanced, facilitates around-the-clock trading of USDC-settled perpetual futures. Investors can now leverage up to 5x on SpaceX, a company reportedly valued at an astounding $1.8 trillion.</p>
+      <p>The launch of this product signifies a notable evolution in how retail investors can access private market valuations. Historically, participation in such high-growth private ventures was largely restricted to institutional investors and accredited individuals. Coinbase's move effectively democratizes this access, allowing a broader range of investors to speculate on the future value of private entities before their public debut.</p>
+      <p>This development is not just about SpaceX; it could establish a new paradigm for the financial industry. By offering perpetual futures on private companies, Coinbase is blurring the traditional lines between public and private market investing. This could prompt other exchanges to explore similar products, potentially leading to a more integrated and accessible global market for both established and emerging companies, profoundly influencing AI market shifts and other high-growth sectors.</p>
+      
+      <div class="stat-box">
+        <div class="stat"><div class="num">$1.8 trillion</div><div class="lab">Reported SpaceX valuation</div></div>
+        <div class="stat"><div class="num">5x</div><div class="lab">Leverage on SpaceX futures</div></div>
+      </div>
+      
+      
+      <div class="why-box">
+        <p class="wlabel">Why It Matters</p>
+        <p>This innovation democratizes access to private market valuations, offering retail investors a way to participate in high-growth companies before their public debut. It could also set a precedent for other exchanges to offer similar products, blurring the lines between public and private market investing and significantly impacting capital flow towards future AI market shifts.</p>
+      </div>
+    </section>
+
+    <section class="section" id="crowdstrike-beats-estimates-falls">
+      <p class="kicker">Headline News</p>
+      <h2 class="story">CrowdStrike Beats Estimates, Stock Still Falls 10%</h2>
+      <p>Despite narrowly surpassing its earnings estimates, cybersecurity firm CrowdStrike experienced a significant 10% drop in its stock price following the announcement. This reaction highlights the extreme sensitivity of the market to perceived threats and future growth prospects, even when current financial performance is strong. CrowdStrike has seen considerable volatility throughout 2026, with its stock plummeting to $342.77 in February before staging a robust recovery to recent highs of $677.50.</p>
+      <p>The primary factor weighing on investor sentiment appears to be the looming threat of competition from next-generation AI models. Specifically, fears surrounding Anthropic's Claude Code Security, an advanced AI model designed for code security, have cast a shadow over CrowdStrike's future market position. Investors are concerned that new AI-powered solutions could disrupt the traditional cybersecurity landscape, potentially eroding CrowdStrike's competitive edge.</p>
+      <p>This market response underscores a critical aspect of the current investment climate: in the era of rapid AI market shifts, even a company delivering solid financial results may not be immune to investor skepticism if there are perceived long-term competitive challenges from emerging AI technologies. It signals that the market is prioritizing future innovation and competitive moats over past performance, especially in sectors highly susceptible to AI disruption.</p>
+      
+      <div class="stat-box">
+        <div class="stat"><div class="num">10%</div><div class="lab">Stock drop post-earnings</div></div>
+        <div class="stat"><div class="num">$342.77</div><div class="lab">Feb 2026 low</div></div>
+        <div class="stat"><div class="num">$677.50</div><div class="lab">Recent high</div></div>
+      </div>
+      
+      
+      <div class="why-box">
+        <p class="wlabel">Why It Matters</p>
+        <p>This price action demonstrates the market's hypersensitivity to AI competition and valuation in the tech sector. Even strong financial performance may not be enough to satisfy investors if perceived threats from new AI models loom large, indicating a discerning phase in AI market shifts.</p>
+      </div>
+    </section>
+
+    <section class="section" id="broadcom-revenue-miss">
+      <p class="kicker">Under the Radar</p>
+      <h2 class="story">Broadcom's AI Boom Bets Clouded by Revenue Miss</h2>
+      <p>Broadcom shares experienced a significant decline, sinking 12% in premarket trading, after the company reported quarterly revenue that fell short of analyst expectations. This disappointment could potentially wipe over $285 billion from its market capitalization, based on its current price of $418.83 per share. The miss signals a challenging environment even for companies positioned within the booming AI sector.</p>
+      <p>The revenue shortfall highlights the intensifying competition within the AI chip market, a critical component of the broader AI market shifts. Broadcom, a major player in this space, is locked in a fierce battle with industry giants like Nvidia, which currently dominates the high-performance AI chip segment. Investors are keenly watching how companies navigate this competitive landscape, and any stumble can be heavily penalized.</p>
+      <p>This event serves as a stark reminder that participation in the AI boom does not guarantee success without flawless execution. Even with strong strategic bets on AI, companies must meet or exceed market expectations to maintain investor confidence. The market is becoming increasingly discerning, demanding not just exposure to AI, but concrete results and a clear competitive advantage in this rapidly evolving technological frontier.</p>
+      
+      <div class="stat-box">
+        <div class="stat"><div class="num">12%</div><div class="lab">Premarket stock drop</div></div>
+        <div class="stat"><div class="num">$285 billion</div><div class="lab">Potential market cap wipe</div></div>
+        <div class="stat"><div class="num">$418.83</div><div class="lab">Current price</div></div>
+      </div>
+      
+      
+      <div class="why-box">
+        <p class="wlabel">Why It Matters</p>
+        <p>This revenue miss underscores the intense competition and high expectations within the AI chip market, a key driver of AI market shifts. It signals that even companies well-positioned in the AI boom must deliver strong financial performance to satisfy investors, who are increasingly scrutinizing execution and competitive differentiation.</p>
+      </div>
+    </section>
+    
+    <section class="section">
+      <p class="kicker">Smart Money Watch</p>
+      <h2 class="story">Where the Big Books Are Positioned</h2>
+      <div class="sidebar-callout">
+        <p><strong>Private Equity:</strong> Partners Group, a prominent private equity firm, recently capped withdrawals from an $8.6 billion fund after facing redemption requests that surpassed its specified threshold. This significant action led to a record 17% decline in Partners Group shares and exerted downward pressure on other private equity firms across Europe. The move underscores increasing investor apprehension regarding liquidity pressures, indicating that these concerns are now extending beyond private credit markets and impacting the broader landscape of private capital investing.</p>
+      </div>
+    </section>
+    
+    <section class="section" id="faq" style="border-bottom:none;">
+      <p class="kicker">FAQ</p>
+      <h2 class="story">Frequently Asked Questions</h2>
+      
+      <div class="faq-item open">
+        <button class="faq-q">Why are Amazon engineers criticizing AI spending? <span class="plus">+</span></button>
+        <div class="faq-a"><p>Amazon engineers are criticizing the company's substantial $200 billion commitment to AI infrastructure, particularly as the company has simultaneously laid off over 30,000 corporate employees. This has led to concerns about resource allocation and employee welfare, prompting local regulatory action.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">What are pre-IPO perpetual futures offered by Coinbase? <span class="plus">+</span></button>
+        <div class="faq-a"><p>Coinbase's pre-IPO perpetual futures allow investors to gain early, leveraged exposure to private companies like SpaceX before they go public. These products are USDC-settled, trade 24/7, and aim to democratize access to private market valuations, reflecting broader AI market shifts in investment access.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">What impact is AI competition having on tech stocks like CrowdStrike and Broadcom? <span class="plus">+</span></button>
+        <div class="faq-a"><p>AI competition is creating significant volatility. CrowdStrike's stock fell despite beating earnings due to fears of new AI models like Anthropic's Claude Code Security. Broadcom's shares sank after a revenue miss, highlighting intense competition in the AI chip market, particularly with Nvidia. This shows investors are highly sensitive to perceived threats and demand concrete performance in the evolving AI landscape, impacting AI market shifts.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">What does the Partners Group situation signal about private markets? <span class="plus">+</span></button>
+        <div class="faq-a"><p>Partners Group capping withdrawals from its private equity fund indicates growing liquidity concerns among investors, suggesting that pressures previously seen in private credit are now impacting broader private capital markets. This highlights a shift towards caution and scrutiny in less liquid investment vehicles, even as AI market shifts create new opportunities.</p></div>
+      </div>
+    </section>
+    
+    <section class="section" style="border-bottom:none;">
+      <p class="kicker">Related Coverage</p>
+      <h2 class="story">More From TickerBrew</h2>
+      <div class="related"><a href="/archive/cybersecurity-rally-geopolitical-risks-crypto-disruption.html">Cybersecurity Surges, Iran Tensions Rise, Crypto Disrupts Wall Street</a><a href="/archive/anthropic-ipo-ignites-ai-market-race.html">Anthropic IPO: AI's Public Market Test Begins, Powell Warns Fed</a></div>
+    </section>
+  </article>
+</div>
+
+<footer>
+  <span>&copy; 2026 TickerBrew &mdash; Stay sharp. Stay brewed.</span>
+  <div class="footer-links">
+    <a href="/archive/">Archive</a>
+    <a href="/about.html">About</a>
+    <a href="/privacy.html">Privacy</a>
+    <a href="/terms.html">Terms</a>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('.faq-q').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      btn.parentElement.classList.toggle('open');
+    });
+  });
+</script>
+
+</body>
+</html>
