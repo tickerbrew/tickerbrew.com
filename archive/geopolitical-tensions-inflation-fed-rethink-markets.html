@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="apple-touch-icon" href="/favicon.png" />
+  <title>Geopolitical Inflation &amp; Fed's Hawkish Shift Shake Markets</title>
+  <meta name="description" content="Escalating geopolitical tensions and surging PCE inflation are forcing the Federal Reserve into a hawkish stance, impacting global markets and energy…">
+  <link rel="canonical" href="https://tickerbrew.com/archive/geopolitical-tensions-inflation-fed-rethink-markets.html">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Geopolitical Inflation &amp; Fed's Hawkish Shift Shake Markets">
+  <meta property="og:description" content="Escalating geopolitical tensions and surging PCE inflation are forcing the Federal Reserve into a hawkish stance, impacting global markets and energy…">
+  <meta property="og:url" content="https://tickerbrew.com/archive/geopolitical-tensions-inflation-fed-rethink-markets.html">
+  <meta property="og:site_name" content="TickerBrew">
+  <meta property="og:image" content="https://tickerbrew.com/og-image.jpg">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Geopolitical Inflation &amp; Fed's Hawkish Shift Shake Markets">
+  <meta name="twitter:description" content="Escalating geopolitical tensions and surging PCE inflation are forcing the Federal Reserve into a hawkish stance, impacting global markets and energy…">
+  <meta name="twitter:image" content="https://tickerbrew.com/og-image.jpg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#050505;--surface:#0d0d0d;--surface-2:#141414;--surface-3:#1a1a1a;
+      --border:rgba(255,255,255,.07);--border-strong:rgba(255,255,255,.14);
+      --green:#22C55E;--green-light:#4ade80;--green-dim:rgba(34,197,94,.12);--green-glow:rgba(34,197,94,.25);
+      --white:#f5f5f5;--muted:#a0a0a0;--muted-2:#666;
+      --serif:Georgia,'Times New Roman',serif;
+    }
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{background:var(--bg);color:var(--white);font-family:'Inter',sans-serif;line-height:1.75;-webkit-font-smoothing:antialiased}
+    a{color:inherit}
+    .wrap{max-width:760px;margin:0 auto;padding:0 24px}
+    .wrap-wide{max-width:1080px;margin:0 auto;padding:0 24px}
+
+    nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:90px;background:rgba(5,5,5,.88);backdrop-filter:blur(24px) saturate(180%);border-bottom:1px solid var(--border)}
+    .nav-inner{max-width:1200px;height:100%;margin:0 auto;padding:0 28px;display:flex;align-items:center;justify-content:space-between}
+    .logo-img{height:80px;width:auto;display:block}
+    .nav-links{display:flex;gap:32px;align-items:center}
+    .nav-links a{color:var(--muted);text-decoration:none;font-size:.88rem;font-weight:500;transition:color .15s ease}
+    .nav-links a:hover{color:var(--white)}
+    .nav-links a.active{color:var(--green)}
+    .nav-btn{background:var(--green)!important;color:#000!important;padding:10px 22px;border-radius:8px;font-weight:700!important;font-size:.88rem!important;white-space:nowrap;flex-shrink:0;transition:background .15s ease,transform .15s ease!important}
+    .nav-btn:hover{background:var(--green-light)!important;transform:translateY(-1px)}
+
+    .crumb{font-size:12px;color:var(--muted);padding:130px 0 0 0}
+    .crumb a{text-decoration:none}
+    .crumb a:hover{color:var(--white)}
+
+    .hero{padding:18px 0 30px 0;border-bottom:1px solid var(--border);position:relative}
+    .eyebrow{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--green-light);margin:0 0 14px 0;display:flex;align-items:center;gap:8px}
+    .eyebrow .dot{width:5px;height:5px;border-radius:50%;background:var(--green)}
+    h1.headline{font-family:var(--serif);font-size:38px;line-height:1.18;font-weight:700;color:var(--white);margin:0 0 14px 0;letter-spacing:-.01em}
+    .dek{font-size:18px;line-height:1.6;color:var(--muted);margin:0 0 22px 0;max-width:640px}
+    .meta-row{display:flex;flex-wrap:wrap;align-items:center;gap:18px;font-size:12.5px;color:var(--muted);margin-bottom:18px}
+    .meta-row .sep{color:var(--border-strong)}
+    .tags{display:flex;flex-wrap:wrap;gap:8px}
+    .tag{font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;border:1px solid var(--border-strong);color:var(--muted);padding:5px 11px;border-radius:20px;text-decoration:none;background:var(--surface)}
+    .tag:hover{border-color:var(--green);color:var(--green-light)}
+
+    .gauge{display:flex;align-items:center;gap:8px}
+    .gauge svg{display:block}
+    .gauge-label{display:flex;flex-direction:column;line-height:1.25}
+    .gauge-label .g-title{font-weight:700;color:var(--white);font-size:12.5px}
+    .gauge-label .g-sub{font-size:11px;color:var(--muted)}
+
+    .toc{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:18px 22px;margin:26px 0 8px 0}
+    .toc-title{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:0 0 12px 0}
+    .toc ol{margin:0;padding-left:20px}
+    .toc li{font-size:14.5px;line-height:1.9}
+    .toc a{text-decoration:none;color:var(--white);border-bottom:1px solid transparent}
+    .toc a:hover{color:var(--green-light);border-color:var(--green-light)}
+
+    article{padding-top:8px}
+    .section{padding:42px 0;border-bottom:1px solid var(--border);scroll-margin-top:110px}
+    .section:last-of-type{border-bottom:none}
+    .kicker{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--green-light);margin:0 0 10px 0}
+    h2.story{font-family:var(--serif);font-size:25px;line-height:1.32;font-weight:700;color:var(--white);margin:0 0 16px 0}
+    .section p{font-size:16px;line-height:1.78;color:#d4d4d4;margin:0 0 16px 0}
+    .section p:last-child{margin-bottom:0}
+    .source-link{font-size:13px;color:var(--muted)}
+    .source-link a{color:var(--green-light);text-decoration:none}
+    .source-link a:hover{text-decoration:underline}
+
+    .stat-box{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin:22px 0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:var(--surface)}
+    .stat{padding:16px 18px;border-right:1px solid var(--border)}
+    .stat:last-child{border-right:none}
+    .stat .num{font-family:var(--serif);font-size:22px;font-weight:700;color:var(--white)}
+    .stat .lab{font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-top:4px}
+
+    blockquote{margin:24px 0;padding:4px 0 4px 22px;border-left:3px solid var(--green);font-size:19px;line-height:1.55;font-style:italic;color:var(--white)}
+    blockquote cite{display:block;margin-top:10px;font-style:normal;font-size:12px;color:var(--muted)}
+
+    .why-box{background:var(--green-dim);border:1px solid var(--green-glow);border-radius:8px;padding:18px 22px;margin-top:18px}
+    .why-box .wlabel{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--green-light);margin:0 0 8px 0}
+    .why-box p{margin:0;color:#d4d4d4;font-size:15px}
+
+    .related{margin-top:20px;font-size:13px}
+    .related .rlabel{font-weight:700;color:var(--white);margin-right:8px}
+    .related a{color:var(--green-light);text-decoration:none}
+    .related a:hover{text-decoration:underline}
+    .related a:not(:last-child)::after{content:" · ";color:var(--border-strong)}
+
+    .sidebar-callout{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:20px 22px;margin:0}
+    .sidebar-callout p{font-size:14.5px;color:#d4d4d4;margin-bottom:14px}
+    .sidebar-callout p:last-child{margin-bottom:0}
+    .sidebar-callout strong{color:var(--white)}
+
+    .faq-item{border-bottom:1px solid var(--border)}
+    .faq-item:first-child{border-top:1px solid var(--border)}
+    .faq-q{width:100%;text-align:left;background:none;border:none;padding:18px 4px;font-family:var(--serif);font-size:16px;font-weight:700;color:var(--white);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px}
+    .faq-q .plus{font-size:18px;color:var(--green-light);transition:transform .2s ease;flex-shrink:0}
+    .faq-item.open .plus{transform:rotate(45deg)}
+    .faq-a{max-height:0;overflow:hidden;transition:max-height .25s ease}
+    .faq-item.open .faq-a{max-height:300px}
+    .faq-a p{padding:0 4px 18px 4px;margin:0;font-size:15px;line-height:1.7;color:#d4d4d4}
+
+    footer{max-width:1200px;margin:0 auto;padding:32px 28px;display:flex;align-items:center;justify-content:space-between;border-top:1px solid var(--border);font-size:.8rem;color:var(--muted-2)}
+    footer a{color:var(--muted-2);text-decoration:none}
+    footer a:hover{color:var(--muted)}
+    .footer-links{display:flex;gap:20px}
+
+    @media(max-width:680px){
+      nav{height:64px}.logo-img{height:54px}.nav-links{display:none}
+      .crumb{padding-top:84px}
+      h1.headline{font-size:28px}.dek{font-size:16px}
+      .stat-box{grid-template-columns:1fr}
+      .stat{border-right:none;border-bottom:1px solid var(--border)}
+      .stat:last-child{border-bottom:none}
+      footer{flex-direction:column;gap:12px;text-align:center}
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="https://tickerbrew.com">
+      <img class="logo-img" src="https://tickerbrew.com/nav-logo.png" alt="TickerBrew — Market Intelligence">
+    </a>
+    <div class="nav-links">
+      <a href="/#why">Why TickerBrew</a>
+      <a href="/#how-it-works">How It Works</a>
+      <a href="/#faq">FAQ</a>
+      <a href="/archive/" class="active">Archive</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+      <a href="/#cta" class="nav-btn">Get Free Access &rarr;</a>
+    </div>
+  </div>
+</nav>
+
+<div class="wrap">
+  <div class="crumb">
+    <a href="/archive/">Archive</a> &nbsp;/&nbsp; June 26, 2026
+  </div>
+
+  <div class="hero">
+    <p class="eyebrow"><span class="dot"></span>Morning Brew &nbsp;&middot;&nbsp; Markets &amp; Macro</p>
+    <h1 class="headline">Geopolitical Tensions Escalate, Inflation Soars, Forcing Hawkish Fed Shift</h1>
+    <p class="dek">Global markets are on edge as U.S. military action in the Middle East sends oil prices higher, while persistent domestic inflation data pushes the Federal Reserve towards further interest rate hikes.</p>
+
+    <div class="meta-row">
+      <span>By the TickerBrew Markets Desk</span>
+      <span class="sep">|</span>
+      <span>June 26, 2026</span>
+      <span class="sep">|</span>
+      <span>7 min read</span>
+      <span class="sep">|</span>
+      <div class="gauge">
+        <svg width="26" height="30" viewBox="0 0 26 30" fill="none">
+          <path d="M3 4 H23 L20 25 Q20 28 16.5 28 H9.5 Q6 28 6 25 Z" stroke="#22C55E" stroke-width="1.6" fill="none"/>
+          <defs><clipPath id="cupclip"><path d="M4.2 5 H21.8 L19.2 24.6 Q19.2 26.6 16.4 26.6 H9.6 Q6.8 26.6 6.8 24.6 Z"/></clipPath></defs>
+          <rect x="3" y="9" width="20" height="20" fill="#22C55E" clip-path="url(#cupclip)"/>
+          <path d="M23 8 Q29 8 29 13 Q29 18 23 17" stroke="#22C55E" stroke-width="1.6" fill="none"/>
+        </svg>
+        <div class="gauge-label">
+          <span class="g-title">Double Shot Hawkish</span>
+          <span class="g-sub">Today's Brew Strength: Strong</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="tags">
+      <a class="tag" href="/archive/?tag=Federal%20Reserve">Federal Reserve</a>
+      <a class="tag" href="/archive/?tag=Inflation">Inflation</a>
+      <a class="tag" href="/archive/?tag=Geopolitics">Geopolitics</a>
+      <a class="tag" href="/archive/?tag=Oil%20%26%20Energy">Oil &amp; Energy</a>
+    </div>
+  </div>
+
+  <div class="toc">
+    <p class="toc-title">In Today's Issue</p>
+    <ol>
+      <li><a href="#us-strikes-iran">U.S. Strikes Iran After Strait of Hormuz Violation</a></li>
+      <li><a href="#pce-inflation-tops-4-1">PCE Inflation Tops 4.1%, Fed Signals Rate Hike</a></li>
+      <li><a href="#trump-eases-fed-pressure">Trump Eases Pressure on Fed Chairman Warsh</a></li>
+      <li><a href="#warsh-reshapes-fed-team">Warsh Reshapes Fed Advisory Team From Within</a></li>
+    </ol>
+  </div>
+
+  <article>
+    
+    <section class="section" id="us-strikes-iran">
+      <p class="kicker">Geopolitical Flashpoint</p>
+      <h2 class="story">U.S. Strikes Iran After Strait of Hormuz Ceasefire Violation</h2>
+      <p>The United States military has conducted strikes against Iran, a significant escalation in geopolitical tensions. This action, ordered by President Donald Trump, was in direct response to alleged drone attacks by Tehran on commercial shipping in the strategically vital Strait of Hormuz, which violated an existing ceasefire agreement. The Strait of Hormuz is a narrow waterway connecting the Persian Gulf to the open ocean, through which a substantial portion of the world's oil supply passes.</p>
+      <p>The immediate aftermath of these strikes saw a sharp increase in global oil prices, reflecting heightened concerns over potential disruptions to supply chains and the stability of energy markets. Investors are now pricing in a higher risk premium for crude oil, anticipating that further conflict could impede the flow of oil through this critical chokepoint. This development adds another layer of complexity to an already volatile global economic landscape, with implications for inflation and consumer costs worldwide.</p>
+      
+      
+      
+      <div class="why-box">
+        <p class="wlabel">Why It Matters</p>
+        <p>Geopolitical instability in the Middle East has an immediate and direct impact on global energy markets, particularly oil prices. Higher oil prices can fuel inflationary pressures across economies, increasing transportation costs and the price of goods, thereby eroding consumer purchasing power and potentially slowing economic growth. This situation also introduces significant uncertainty for businesses and investors, affecting risk appetite and investment decisions.</p>
+      </div>
+    </section>
+
+    <section class="section" id="pce-inflation-tops-4-1">
+      <p class="kicker">Economic Indicators</p>
+      <h2 class="story">PCE Inflation Tops 4.1%, Fed Officials Signal Rate Hike</h2>
+      <p>The Personal Consumption Expenditures (PCE) price index, the Federal Reserve's preferred measure of inflation, surged by 4.1% over the 12 months ending in May. This marks the highest annual reading since April 2023 and follows an unrevised 3.8% increase in April, indicating that inflationary pressures are not only persistent but accelerating. The PCE index tracks changes in the prices of goods and services purchased by consumers, providing a comprehensive view of consumer spending patterns and price changes.</p>
+      <p>This stubbornly high inflation data is forcing the Federal Reserve to reconsider its monetary policy stance. Minneapolis Fed President Neel Kashkari, a voting member of the Federal Open Market Committee (FOMC), has now publicly stated his expectation for at least one interest rate increase this year. This represents a significant shift from his previous outlook and signals a growing consensus among Fed officials that more aggressive tightening may be necessary to bring inflation back down towards the central bank's 2% target. The market is now adjusting to the prospect of a more hawkish Fed, which could lead to higher borrowing costs and impact asset valuations.</p>
+      
+      <div class="stat-box">
+        <div class="stat"><div class="num">4.1%</div><div class="lab">PCE Inflation (YoY, May)</div></div>
+      </div>
+      
+      <blockquote>
+        "Minneapolis Fed President Neel Kashkari now expects one interest rate increase this year, a shift from his earlier outlook."
+        <cite>— Minneapolis Fed President Neel Kashkari</cite>
+      </blockquote>
+      
+      <div class="why-box">
+        <p class="wlabel">Why It Matters</p>
+        <p>Persistent inflation above 4% significantly erodes the purchasing power of consumers, making everyday goods and services more expensive. For businesses, rising input costs can squeeze profit margins and force them to pass on higher prices, perpetuating the inflationary cycle. The Federal Reserve's commitment to price stability means it will likely continue to raise interest rates, which can cool demand but also risks slowing economic growth and increasing the cost of capital for companies and individuals.</p>
+      </div>
+    </section>
+
+    <section class="section" id="trump-eases-fed-pressure">
+      <p class="kicker">Monetary Policy &amp; Politics</p>
+      <h2 class="story">Trump Eases Pressure on Fed Chairman Warsh Amid Inflation Surge</h2>
+      <p>In a notable shift, President Donald Trump has reportedly eased his public calls for immediate interest rate cuts, providing new Federal Reserve Chairman Kevin Warsh with increased political autonomy. This change in stance comes directly on the heels of the latest inflation data, which showed the PCE index topping 4.1%. Previously, President Trump had been vocal about his desire for the Fed to lower rates, even as recently as the preceding Wednesday, often criticizing the central bank's policy direction.</p>
+      <p>This newfound political breathing room allows Chairman Warsh and the Federal Reserve to focus squarely on their dual mandate of maximizing employment and maintaining price stability, particularly in the face of surging inflation. The administration's decision to step back from direct monetary policy commentary is crucial for reinforcing the Fed's independence, which is widely considered vital for its credibility and effectiveness in managing the economy without political interference.</p>
+      
+      
+      
+      <div class="why-box">
+        <p class="wlabel">Why It Matters</p>
+        <p>The independence of the Federal Reserve from political influence is a cornerstone of sound monetary policy. When the administration refrains from pressuring the central bank, it allows the Fed to make data-driven decisions necessary to combat inflation, even if those decisions are politically unpopular. This strengthens market confidence in the Fed's ability to achieve its long-term goals of price stability and maximum employment, without being swayed by short-term political cycles.</p>
+      </div>
+    </section>
+
+    <section class="section" id="warsh-reshapes-fed-team">
+      <p class="kicker">Central Bank Insights</p>
+      <h2 class="story">Warsh Reshapes Fed Advisory Team From Within</h2>
+      <p>Federal Reserve Chairman Kevin Warsh has begun to reshape the central bank's intellectual and operational core by appointing Daniel Covitz and Eric Engstrom to key advisory positions. Both individuals were already established economists within the Federal Reserve system: Covitz served as a deputy director in the research and statistics division, while Engstrom held the position of associate director in monetary affairs. These internal promotions signal a strategic approach by Warsh to leverage existing institutional knowledge and expertise.</p>
+      <p>This move suggests that Chairman Warsh is not just seeking new perspectives but is also keen on implementing a new vision for the central bank's approach to economics and monetary policy through individuals already deeply familiar with the Fed's intricate workings. By promoting from within, Warsh aims to foster continuity while subtly steering the institution towards his desired policy framework, potentially leading to shifts in how the Fed analyzes economic data and formulates its strategies.</p>
+      
+      
+      
+      <div class="why-box">
+        <p class="wlabel">Why It Matters</p>
+        <p>The composition of the Federal Reserve's advisory team directly influences the analysis and recommendations that inform monetary policy decisions. By appointing internal economists, Chairman Warsh can ensure a smooth transition and harness deep institutional understanding while still introducing new strategic directions. This internal restructuring indicates a deliberate effort to refine the Fed's intellectual framework, which could have long-term implications for how the central bank responds to future economic challenges, including persistent geopolitical inflation.</p>
+      </div>
+    </section>
+    
+    <section class="section">
+      <p class="kicker">Smart Money Watch</p>
+      <h2 class="story">Where the Big Books Are Positioned</h2>
+      <div class="sidebar-callout">
+        <p><strong>Equities:</strong> Institutional investors are actively re-evaluating the software sector. While ServiceNow and Salesforce stocks saw notable surges, Oracle experienced its worst weekly performance since 2001. This divergence reflects growing concerns over OpenAI's financial stability and potential delays in its IPO, prompting a rotation from speculative, AI-dependent plays towards established enterprise software companies with clearer profitability pathways. Funds are adjusting their technology exposure, favoring proven business models over high-growth, high-risk AI bets.</p>
+      </div>
+    </section>
+    
+    <section class="section" id="faq" style="border-bottom:none;">
+      <p class="kicker">FAQ</p>
+      <h2 class="story">Frequently Asked Questions</h2>
+      
+      <div class="faq-item open">
+        <button class="faq-q">What is PCE inflation and why is it important to the Federal Reserve? <span class="plus">+</span></button>
+        <div class="faq-a"><p>PCE stands for Personal Consumption Expenditures, and its price index is the Federal Reserve's preferred measure of inflation. It tracks changes in the prices of goods and services purchased by consumers, providing a comprehensive view of inflation. The Fed prefers PCE over the Consumer Price Index (CPI) because it accounts for changes in consumer behavior and has a broader scope, making it a more accurate indicator for monetary policy decisions.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">How do geopolitical events in the Middle East, like those in the Strait of Hormuz, affect global markets? <span class="plus">+</span></button>
+        <div class="faq-a"><p>Geopolitical events in the Middle East, particularly those affecting critical shipping lanes like the Strait of Hormuz, can significantly impact global markets, primarily through energy prices. As a major chokepoint for oil shipments, any disruption or increased tension in the Strait can lead to higher oil prices due to supply concerns. This, in turn, fuels global inflation, increases transportation costs, and can lead to broader market uncertainty, causing investors to shift towards safer assets.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Why is the Federal Reserve's independence from political influence considered important? <span class="plus">+</span></button>
+        <div class="faq-a"><p>The Federal Reserve's independence is crucial for its credibility and effectiveness in managing the economy. It allows the central bank to make monetary policy decisions based on economic data and long-term goals (like price stability and maximum employment) rather than short-term political pressures. This prevents policies from being manipulated for electoral cycles and ensures a more stable and predictable economic environment, fostering greater market confidence.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">What is the current stance of the Federal Reserve regarding interest rates given recent inflation data? <span class="plus">+</span></button>
+        <div class="faq-a"><p>Given the persistent and accelerating PCE inflation, which recently topped 4.1%, the Federal Reserve is signaling a more hawkish stance. Officials like Minneapolis Fed President Neel Kashkari are now openly expecting at least one interest rate hike this year. This indicates the Fed is prepared to continue tightening monetary policy to combat inflation, even if it means potentially slowing economic growth, to achieve its price stability mandate.</p></div>
+      </div>
+    </section>
+    
+    <section class="section" style="border-bottom:none;">
+      <p class="kicker">Related Coverage</p>
+      <h2 class="story">More From TickerBrew</h2>
+      <div class="related"><a href="/archive/hormuz-attack-inflation-fed-rate-hike.html">Hormuz Attack, 4% PCE Inflation Shake Markets, Fed Rate Hike Looms</a><a href="/archive/global-slowdown-inflation-yen-tungsten-shock.html">OECD Warns Global Slowdown, Inflation Spike; Yen Intervention, Tungsten Crisis</a></div>
+    </section>
+  </article>
+</div>
+
+<footer>
+  <span>&copy; 2026 TickerBrew &mdash; Stay sharp. Stay brewed.</span>
+  <div class="footer-links">
+    <a href="/archive/">Archive</a>
+    <a href="/about.html">About</a>
+    <a href="/privacy.html">Privacy</a>
+    <a href="/terms.html">Terms</a>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('.faq-q').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      btn.parentElement.classList.toggle('open');
+    });
+  });
+</script>
+
+</body>
+</html>
