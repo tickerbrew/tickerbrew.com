@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="apple-touch-icon" href="/favicon.png" />
+  <title>Fed Warsh Outlook: Navigating Uncertainty in Monetary Policy</title>
+  <meta name="description" content="New Fed Chair Kevin Warsh's initial moves create market uncertainty. Explore the Fed's balance sheet plans, oil supply shifts, and their impact on…">
+  <link rel="canonical" href="https://tickerbrew.com/archive/warsh-fed-oil-supply-housing-slows.html">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Fed Warsh Outlook: Navigating Uncertainty in Monetary Policy">
+  <meta property="og:description" content="New Fed Chair Kevin Warsh's initial moves create market uncertainty. Explore the Fed's balance sheet plans, oil supply shifts, and their impact on…">
+  <meta property="og:url" content="https://tickerbrew.com/archive/warsh-fed-oil-supply-housing-slows.html">
+  <meta property="og:site_name" content="TickerBrew">
+  <meta property="og:image" content="https://tickerbrew.com/og-image.jpg">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Fed Warsh Outlook: Navigating Uncertainty in Monetary Policy">
+  <meta name="twitter:description" content="New Fed Chair Kevin Warsh's initial moves create market uncertainty. Explore the Fed's balance sheet plans, oil supply shifts, and their impact on…">
+  <meta name="twitter:image" content="https://tickerbrew.com/og-image.jpg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#050505;--surface:#0d0d0d;--surface-2:#141414;--surface-3:#1a1a1a;
+      --border:rgba(255,255,255,.07);--border-strong:rgba(255,255,255,.14);
+      --green:#22C55E;--green-light:#4ade80;--green-dim:rgba(34,197,94,.12);--green-glow:rgba(34,197,94,.25);
+      --white:#f5f5f5;--muted:#a0a0a0;--muted-2:#666;
+      --serif:Georgia,'Times New Roman',serif;
+    }
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{background:var(--bg);color:var(--white);font-family:'Inter',sans-serif;line-height:1.75;-webkit-font-smoothing:antialiased}
+    a{color:inherit}
+    .wrap{max-width:760px;margin:0 auto;padding:0 24px}
+    .wrap-wide{max-width:1080px;margin:0 auto;padding:0 24px}
+
+    nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:90px;background:rgba(5,5,5,.88);backdrop-filter:blur(24px) saturate(180%);border-bottom:1px solid var(--border)}
+    .nav-inner{max-width:1200px;height:100%;margin:0 auto;padding:0 28px;display:flex;align-items:center;justify-content:space-between}
+    .logo-img{height:80px;width:auto;display:block}
+    .nav-links{display:flex;gap:32px;align-items:center}
+    .nav-links a{color:var(--muted);text-decoration:none;font-size:.88rem;font-weight:500;transition:color .15s ease}
+    .nav-links a:hover{color:var(--white)}
+    .nav-links a.active{color:var(--green)}
+    .nav-btn{background:var(--green)!important;color:#000!important;padding:10px 22px;border-radius:8px;font-weight:700!important;font-size:.88rem!important;white-space:nowrap;flex-shrink:0;transition:background .15s ease,transform .15s ease!important}
+    .nav-btn:hover{background:var(--green-light)!important;transform:translateY(-1px)}
+
+    .crumb{font-size:12px;color:var(--muted);padding:130px 0 0 0}
+    .crumb a{text-decoration:none}
+    .crumb a:hover{color:var(--white)}
+
+    .hero{padding:18px 0 30px 0;border-bottom:1px solid var(--border);position:relative}
+    .eyebrow{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--green-light);margin:0 0 14px 0;display:flex;align-items:center;gap:8px}
+    .eyebrow .dot{width:5px;height:5px;border-radius:50%;background:var(--green)}
+    h1.headline{font-family:var(--serif);font-size:38px;line-height:1.18;font-weight:700;color:var(--white);margin:0 0 14px 0;letter-spacing:-.01em}
+    .dek{font-size:18px;line-height:1.6;color:var(--muted);margin:0 0 22px 0;max-width:640px}
+    .meta-row{display:flex;flex-wrap:wrap;align-items:center;gap:18px;font-size:12.5px;color:var(--muted);margin-bottom:18px}
+    .meta-row .sep{color:var(--border-strong)}
+    .tags{display:flex;flex-wrap:wrap;gap:8px}
+    .tag{font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;border:1px solid var(--border-strong);color:var(--muted);padding:5px 11px;border-radius:20px;text-decoration:none;background:var(--surface)}
+    .tag:hover{border-color:var(--green);color:var(--green-light)}
+
+    .gauge{display:flex;align-items:center;gap:8px}
+    .gauge svg{display:block}
+    .gauge-label{display:flex;flex-direction:column;line-height:1.25}
+    .gauge-label .g-title{font-weight:700;color:var(--white);font-size:12.5px}
+    .gauge-label .g-sub{font-size:11px;color:var(--muted)}
+
+    .toc{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:18px 22px;margin:26px 0 8px 0}
+    .toc-title{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:0 0 12px 0}
+    .toc ol{margin:0;padding-left:20px}
+    .toc li{font-size:14.5px;line-height:1.9}
+    .toc a{text-decoration:none;color:var(--white);border-bottom:1px solid transparent}
+    .toc a:hover{color:var(--green-light);border-color:var(--green-light)}
+
+    article{padding-top:8px}
+    .section{padding:42px 0;border-bottom:1px solid var(--border);scroll-margin-top:110px}
+    .section:last-of-type{border-bottom:none}
+    .kicker{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--green-light);margin:0 0 10px 0}
+    h2.story{font-family:var(--serif);font-size:25px;line-height:1.32;font-weight:700;color:var(--white);margin:0 0 16px 0}
+    .section p{font-size:16px;line-height:1.78;color:#d4d4d4;margin:0 0 16px 0}
+    .section p:last-child{margin-bottom:0}
+    .source-link{font-size:13px;color:var(--muted)}
+    .source-link a{color:var(--green-light);text-decoration:none}
+    .source-link a:hover{text-decoration:underline}
+
+    .stat-box{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin:22px 0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:var(--surface)}
+    .stat{padding:16px 18px;border-right:1px solid var(--border)}
+    .stat:last-child{border-right:none}
+    .stat .num{font-family:var(--serif);font-size:22px;font-weight:700;color:var(--white)}
+    .stat .lab{font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-top:4px}
+
+    blockquote{margin:24px 0;padding:4px 0 4px 22px;border-left:3px solid var(--green);font-size:19px;line-height:1.55;font-style:italic;color:var(--white)}
+    blockquote cite{display:block;margin-top:10px;font-style:normal;font-size:12px;color:var(--muted)}
+
+    .why-box{background:var(--green-dim);border:1px solid var(--green-glow);border-radius:8px;padding:18px 22px;margin-top:18px}
+    .why-box .wlabel{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--green-light);margin:0 0 8px 0}
+    .why-box p{margin:0;color:#d4d4d4;font-size:15px}
+
+    .related{margin-top:20px;font-size:13px}
+    .related .rlabel{font-weight:700;color:var(--white);margin-right:8px}
+    .related a{color:var(--green-light);text-decoration:none}
+    .related a:hover{text-decoration:underline}
+    .related a:not(:last-child)::after{content:" · ";color:var(--border-strong)}
+
+    .sidebar-callout{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:20px 22px;margin:0}
+    .sidebar-callout p{font-size:14.5px;color:#d4d4d4;margin-bottom:14px}
+    .sidebar-callout p:last-child{margin-bottom:0}
+    .sidebar-callout strong{color:var(--white)}
+
+    .faq-item{border-bottom:1px solid var(--border)}
+    .faq-item:first-child{border-top:1px solid var(--border)}
+    .faq-q{width:100%;text-align:left;background:none;border:none;padding:18px 4px;font-family:var(--serif);font-size:16px;font-weight:700;color:var(--white);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px}
+    .faq-q .plus{font-size:18px;color:var(--green-light);transition:transform .2s ease;flex-shrink:0}
+    .faq-item.open .plus{transform:rotate(45deg)}
+    .faq-a{max-height:0;overflow:hidden;transition:max-height .25s ease}
+    .faq-item.open .faq-a{max-height:300px}
+    .faq-a p{padding:0 4px 18px 4px;margin:0;font-size:15px;line-height:1.7;color:#d4d4d4}
+
+    footer{max-width:1200px;margin:0 auto;padding:32px 28px;display:flex;align-items:center;justify-content:space-between;border-top:1px solid var(--border);font-size:.8rem;color:var(--muted-2)}
+    footer a{color:var(--muted-2);text-decoration:none}
+    footer a:hover{color:var(--muted)}
+    .footer-links{display:flex;gap:20px}
+
+    @media(max-width:680px){
+      nav{height:64px}.logo-img{height:54px}.nav-links{display:none}
+      .crumb{padding-top:84px}
+      h1.headline{font-size:28px}.dek{font-size:16px}
+      .stat-box{grid-template-columns:1fr}
+      .stat{border-right:none;border-bottom:1px solid var(--border)}
+      .stat:last-child{border-bottom:none}
+      footer{flex-direction:column;gap:12px;text-align:center}
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="https://tickerbrew.com">
+      <img class="logo-img" src="https://tickerbrew.com/nav-logo.png" alt="TickerBrew — Market Intelligence">
+    </a>
+    <div class="nav-links">
+      <a href="/#why">Why TickerBrew</a>
+      <a href="/#how-it-works">How It Works</a>
+      <a href="/#faq">FAQ</a>
+      <a href="/archive/" class="active">Archive</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+      <a href="/#cta" class="nav-btn">Get Free Access &rarr;</a>
+    </div>
+  </div>
+</nav>
+
+<div class="wrap">
+  <div class="crumb">
+    <a href="/archive/">Archive</a> &nbsp;/&nbsp; June 16, 2026
+  </div>
+
+  <div class="hero">
+    <p class="eyebrow"><span class="dot"></span>Morning Brew &nbsp;&middot;&nbsp; Markets &amp; Macro</p>
+    <h1 class="headline">Warsh's Silent Debut: The New Fed Era, Oil Shifts, and Market Volatility</h1>
+    <p class="dek">Federal Reserve policy under new Chair Kevin Warsh is setting a new tone for financial markets, marked by a shift in communication strategy and ambitious balance sheet plans. Simultaneously, global oil markets are undergoing a significant rebalancing, influenced by geopolitical developments that promise increased supply and potential inflation relief.</p>
+
+    <div class="meta-row">
+      <span>By the TickerBrew Markets Desk</span>
+      <span class="sep">|</span>
+      <span>June 16, 2026</span>
+      <span class="sep">|</span>
+      <span>6 min read</span>
+      <span class="sep">|</span>
+      <div class="gauge">
+        <svg width="26" height="30" viewBox="0 0 26 30" fill="none">
+          <path d="M3 4 H23 L20 25 Q20 28 16.5 28 H9.5 Q6 28 6 25 Z" stroke="#22C55E" stroke-width="1.6" fill="none"/>
+          <defs><clipPath id="cupclip"><path d="M4.2 5 H21.8 L19.2 24.6 Q19.2 26.6 16.4 26.6 H9.6 Q6.8 26.6 6.8 24.6 Z"/></clipPath></defs>
+          <rect x="3" y="9" width="20" height="20" fill="#22C55E" clip-path="url(#cupclip)"/>
+          <path d="M23 8 Q29 8 29 13 Q29 18 23 17" stroke="#22C55E" stroke-width="1.6" fill="none"/>
+        </svg>
+        <div class="gauge-label">
+          <span class="g-title">Strong Brew Volatile</span>
+          <span class="g-sub">Today's Brew Strength: Strong</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="tags">
+      <a class="tag" href="/archive/?tag=Federal%20Reserve">Federal Reserve</a>
+      <a class="tag" href="/archive/?tag=Interest%20Rates">Interest Rates</a>
+      <a class="tag" href="/archive/?tag=Oil%20%26%20Energy">Oil &amp; Energy</a>
+      <a class="tag" href="/archive/?tag=Geopolitics">Geopolitics</a>
+      <a class="tag" href="/archive/?tag=Equities">Equities</a>
+    </div>
+  </div>
+
+  <div class="toc">
+    <p class="toc-title">In Today's Issue</p>
+    <ol>
+      <li><a href="#warsh-withholds-dot-plot">Fed Chair Warsh Expected to Withhold 'Dot' from Central Bank's Interest Rate Outlook</a></li>
+      <li><a href="#warsh-reshapes-fed-balance-sheet">As Chair, Warsh Finally Has a Chance to Put Stamp on Fed Balance Sheet</a></li>
+      <li><a href="#oil-slides-iran-supply">Oil Slides on Iran Supply Prospects as Traders Wait on Warsh</a></li>
+      <li><a href="#housing-starts-eight-month-low">US Single-Family Housing Starts Slide to Eight-Month Low</a></li>
+    </ol>
+  </div>
+
+  <article>
+    
+    <section class="section" id="warsh-withholds-dot-plot">
+      <p class="kicker">Headline News</p>
+      <h2 class="story">Fed Chair Warsh Expected to Withhold 'Dot' from Central Bank's Interest Rate Outlook</h2>
+      <p>Federal Reserve Chair Kevin Warsh is widely anticipated to forgo the release of the 'dot plot' after his inaugural policy meeting this week. The dot plot, a quarterly summary of individual Fed officials' projections for the federal funds rate, serves as a critical indicator for market participants, offering insights into the central bank's collective outlook on future interest rate adjustments through 2028. This move departs from established practice, where the dot plot provides a transparent view of the committee's thinking.</p>
+      <p>Analysts suggest several reasons for Warsh's expected decision. Given his recent appointment in May, he may feel it's too early to commit to specific rate projections, preferring to avoid setting premature expectations for his nascent leadership. Alternatively, this could signal a strategic shift in the Fed's communication approach under his tenure, potentially aiming for greater flexibility or a less prescriptive form of forward guidance. Regardless of the rationale, this decision creates a significant information void for investors who rely on granular Fed guidance to inform their strategies.</p>
+      <p>The absence of the dot plot removes a key tool for forward guidance, making the Federal Reserve's communication strategy less transparent and more reliant on individual speeches and statements. This could lead to increased scrutiny of every public comment from Fed officials as markets attempt to infer the central bank's policy direction.</p>
+      
+      
+      
+      <div class="why-box">
+        <p class="wlabel">Why It Matters</p>
+        <p>This decision by new Fed Chair Warsh introduces a substantial degree of uncertainty, forcing markets to speculate on the immediate stance and future trajectory of monetary policy. Investors will face heightened volatility across bond and equity markets without clear signals, making risk assessment more challenging and potentially leading to erratic trading behavior as speculation fills the information gap.</p>
+      </div>
+    </section>
+
+    <section class="section" id="warsh-reshapes-fed-balance-sheet">
+      <p class="kicker">Headline News</p>
+      <h2 class="story">As Chair, Warsh Finally Has a Chance to Put Stamp on Fed Balance Sheet</h2>
+      <p>New Federal Reserve Chair Kevin Warsh now has a pivotal opportunity to reshape the central bank's substantial balance sheet, a lasting legacy of previous quantitative easing (QE) programs implemented to stimulate the economy. The balance sheet expanded dramatically during and after the 2008 financial crisis and the COVID-19 pandemic, accumulating vast holdings of Treasury securities and mortgage-backed securities.</p>
+      <p>There is a growing consensus among economists and policymakers that the Fed can actively shrink its holdings not just through passive runoff (allowing securities to mature without reinvestment), but also by adjusting the regulatory rules governing how banks manage liquidity. This more proactive approach could accelerate the normalization of the Fed's financial footprint. Fed Governor Christopher Waller has suggested that a $500 billion reduction is achievable through these rule changes, while former official Dudley believes an even larger $1 trillion downsizing is possible.</p>
+      <p>Even with these significant reductions, the Fed's balance sheet would still remain considerably larger than its pre-pandemic size from 2020. This indicates that despite efforts to normalize, the central bank will continue to maintain a substantial presence in financial markets, influencing liquidity and credit conditions for the foreseeable future.</p>
+      
+      <div class="stat-box">
+        <div class="stat"><div class="num">$500 billion</div><div class="lab">Potential balance sheet reduction via liquidity rules (Waller)</div></div>
+        <div class="stat"><div class="num">$1 trillion</div><div class="lab">Potential balance sheet reduction via liquidity rules (Dudley)</div></div>
+      </div>
+      
+      <blockquote>
+        "a $500 billion reduction is possible through these rule changes"
+        <cite>— Fed Governor Christopher Waller</cite>
+      </blockquote>
+      
+      <div class="why-box">
+        <p class="wlabel">Why It Matters</p>
+        <p>A smaller Fed balance sheet implies reduced liquidity within the financial system, which could tighten credit conditions more broadly than just through interest rate hikes. This directly impacts corporate borrowing costs, consumer lending rates, and overall economic activity, potentially slowing growth. This shift signals a move towards unwinding years of accommodative measures, influencing bank strategies and profitability.</p>
+      </div>
+    </section>
+
+    <section class="section" id="oil-slides-iran-supply">
+      <p class="kicker">Headline News</p>
+      <h2 class="story">Oil Slides on Iran Supply Prospects as Traders Wait on Warsh</h2>
+      <p>Global oil prices are experiencing a significant slide today, driven by increasing prospects of Iranian supply re-entering the international market. This follows reports of a preliminary peace deal, under which a senior U.S. official indicated that sanctions on Iranian oil exports would be waived. Such a development could add millions of barrels of crude oil to an already dynamic global supply landscape, easing tightness and impacting prices.</p>
+      <p>The market reaction has been swift, with Brent crude futures falling 0.5% to $82.72 a barrel, while U.S. West Texas Intermediate (WTI) dropped 0.3% to $80.51 a barrel, reaching a three-month low. Traders are now pricing in a relatively high probability of a full normalization of oil flow through the critical Strait of Hormuz, which would alleviate transit risks and further bolster supply expectations. This geopolitical shift is a major catalyst for the current price movements.</p>
+      <p>While the immediate impact is a downward pressure on prices, analysts at HSBC caution that it will take time for the full effect to materialize. They project that it will be until the end of September for Iranian supply to fully normalize and reach the levels seen in February 2026, suggesting that the market will gradually absorb the new supply rather than experiencing an immediate flood.</p>
+      
+      <div class="stat-box">
+        <div class="stat"><div class="num">0.5%</div><div class="lab">Brent crude futures fell</div></div>
+        <div class="stat"><div class="num">0.3%</div><div class="lab">U.S. WTI dropped</div></div>
+        <div class="stat"><div class="num">$82.72</div><div class="lab">Brent crude price</div></div>
+        <div class="stat"><div class="num">$80.51</div><div class="lab">U.S. WTI price</div></div>
+      </div>
+      
+      <blockquote>
+        "it will take until the end of September for this to materialize fully and reach February 2026 levels."
+        <cite>— HSBC analysts</cite>
+      </blockquote>
+      
+      <div class="why-box">
+        <p class="wlabel">Why It Matters</p>
+        <p>Increased oil supply from Iran would likely ease global energy prices, providing relief to consumers and businesses facing high input costs, which could help temper worldwide inflation expectations. However, this influx could negatively impact energy producers, particularly those with higher production costs. The situation also highlights the fragile nature of geopolitical stability in the Middle East, which could still pose risks to consistent supply.</p>
+      </div>
+    </section>
+
+    <section class="section" id="housing-starts-eight-month-low">
+      <p class="kicker">Under the Radar</p>
+      <h2 class="story">US Single-Family Housing Starts Slide to Eight-Month Low</h2>
+      <p>U.S. single-family homebuilding activity experienced a notable decline in May, reaching an eight-month low. This slowdown is primarily attributed to the dual pressures of elevated mortgage rates, which dampen buyer demand, and persistently high building material costs, which increase construction expenses for developers. The housing market, a crucial barometer for economic health, is showing signs of significant strain.</p>
+      <p>This report suggests that the housing sector is poised to act as a drag on overall economic growth during the second quarter, following a period of relatively robust activity. The weakness in homebuilding aligns with recent data indicating strong consumer and producer prices, highlighting a persistent inflationary environment even as a key sector of the economy begins to cool. This creates a complex challenge for policymakers trying to balance inflation control with economic stability.</p>
+      <p>The sustained weakness in housing warrants closer attention because it is a foundational economic indicator, impacting a wide array of related industries, construction employment, consumer wealth, and broader credit markets. A prolonged slump in this sector could signal deeper economic headwinds that might affect employment and consumer confidence more profoundly than the market's current focus on the Fed's immediate interest rate decisions.</p>
+      
+      
+      
+      <div class="why-box">
+        <p class="wlabel">Why It Matters</p>
+        <p>The decline in single-family housing starts signals broader economic headwinds, as housing is a foundational sector impacting employment, consumer wealth, and credit markets. Its sustained weakness could lead to wider economic deceleration, affecting consumer confidence and potentially influencing the Federal Reserve's long-term policy considerations beyond immediate rate decisions.</p>
+      </div>
+    </section>
+    
+    <section class="section">
+      <p class="kicker">Smart Money Watch</p>
+      <h2 class="story">Where the Big Books Are Positioned</h2>
+      <div class="sidebar-callout">
+        <p><strong>Rates:</strong> Institutional investors are actively adjusting portfolios, reducing exposure to long-duration bonds. This move anticipates higher volatility and potentially less predictable rate movements without clear dot plot guidance from the new Fed Chair Warsh.</p>
+        <p><strong>Commodities:</strong> Some managers are rotating into energy sector equities, betting that while Iranian supply will increase, global demand remains robust enough to support prices, especially given potential disruptions in other regions and the long-term energy transition.</p>
+        <p><strong>Banking Sector:</strong> Conversely, some hedge funds are building short positions in specific regional bank stocks. They are wary of tightening liquidity from a shrinking Fed balance sheet and rising commercial real estate risks, which could strain smaller lenders.</p>
+      </div>
+    </section>
+    
+    <section class="section" id="faq" style="border-bottom:none;">
+      <p class="kicker">FAQ</p>
+      <h2 class="story">Frequently Asked Questions</h2>
+      
+      <div class="faq-item open">
+        <button class="faq-q">Why is Fed Chair Warsh's decision to withhold the 'dot plot' significant? <span class="plus">+</span></button>
+        <div class="faq-a"><p>It creates an information vacuum for investors, making it harder to predict the Federal Reserve's future interest rate trajectory and increasing market uncertainty and volatility. This forces market participants to rely on other forms of communication to gauge the Fed's outlook.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">How does a shrinking Fed balance sheet impact the economy? <span class="plus">+</span></button>
+        <div class="faq-a"><p>A smaller balance sheet means less liquidity in the financial system, potentially tightening credit conditions across the economy. This can lead to increased borrowing costs for businesses and consumers, and could contribute to a slowdown in overall economic growth.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">What is causing the recent slide in oil prices? <span class="plus">+</span></button>
+        <div class="faq-a"><p>Oil prices are falling due to the prospect of increased supply from Iran, as a preliminary peace deal suggests sanctions on Iranian oil will be waived. This potential influx of millions of additional barrels to global markets is easing supply concerns and putting downward pressure on prices.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">What does the decline in US single-family housing starts signal for the economy? <span class="plus">+</span></button>
+        <div class="faq-a"><p>The drop in housing starts indicates that the housing market, a foundational economic sector, is struggling due to high mortgage rates and material costs. This suggests broader economic headwinds and potential for slower growth, impacting employment and consumer confidence more deeply.</p></div>
+      </div>
+    </section>
+    
+    <section class="section" style="border-bottom:none;">
+      <p class="kicker">Related Coverage</p>
+      <h2 class="story">More From TickerBrew</h2>
+      <div class="related"><a href="/archive/gulf-tensions-jobs-surge-dow-record-tech-dip.html">Iran-US Tensions, Strong Jobs Data, Dow Record: Market Divergence</a><a href="/archive/spacex-record-ipo-fed-warsh-silence-global-growth.html">SpaceX IPO $2 Trillion, Fed Warsh Silence, Global Growth Cuts</a></div>
+    </section>
+  </article>
+</div>
+
+<footer>
+  <span>&copy; 2026 TickerBrew &mdash; Stay sharp. Stay brewed.</span>
+  <div class="footer-links">
+    <a href="/archive/">Archive</a>
+    <a href="/about.html">About</a>
+    <a href="/privacy.html">Privacy</a>
+    <a href="/terms.html">Terms</a>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('.faq-q').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      btn.parentElement.classList.toggle('open');
+    });
+  });
+</script>
+
+</body>
+</html>
