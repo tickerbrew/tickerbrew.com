@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Financial Disclaimer — TickerBrew</title>
+<meta name="description" content="TickerBrew is market commentary only — not financial advice. Read before investing." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:#050505; --surface:#0d0d0d; --surface-2:#141414;
+  --border:rgba(255,255,255,.07); --green:#22C55E;
+  --green-light:#4ade80; --green-dim:rgba(34,197,94,.12);
+  --white:#f5f5f5; --muted:#a0a0a0; --muted-2:#666;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--white);font-family:'Inter',sans-serif;overflow-x:hidden;line-height:1.6;-webkit-font-smoothing:antialiased;}
+body::before{content:"";position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.035'/%3E%3C/svg%3E");pointer-events:none;z-index:9999;opacity:.4;}
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:110px;background:rgba(5,5,5,.88);backdrop-filter:blur(24px) saturate(180%);border-bottom:1px solid var(--border);}
+.nav-inner{max-width:1200px;height:100%;margin:0 auto;padding:0 28px;display:flex;align-items:center;justify-content:space-between;}
+.logo-img{height:100px;width:auto;display:block;}
+.nav-links{display:flex;gap:28px;align-items:center;}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:.88rem;font-weight:500;transition:color .15s;}
+.nav-links a:hover,.nav-links a.active{color:var(--white);}
+.nav-btn{background:var(--green)!important;color:#000!important;padding:10px 20px;border-radius:8px;font-weight:700!important;font-size:.88rem!important;}
+.nav-btn:hover{background:var(--green-light)!important;}
+.container{max-width:860px;margin:0 auto;padding:0 28px;}
+.container.wide{max-width:1200px;}
+.page-hero{padding-top:180px;padding-bottom:60px;border-bottom:1px solid var(--border);}
+.page-hero .eyebrow{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;border-radius:999px;background:var(--green-dim);border:1px solid rgba(34,197,94,.22);margin-bottom:20px;font-size:.75rem;font-weight:700;color:var(--green-light);letter-spacing:.06em;text-transform:uppercase;}
+.page-hero h1{font-size:clamp(2.4rem,5vw,3.8rem);font-weight:900;letter-spacing:-0.05em;line-height:1;margin-bottom:14px;}
+.page-hero h1 .accent{color:var(--green);}
+.page-hero p{color:var(--muted);font-size:1rem;max-width:580px;line-height:1.7;}
+.page-body{padding:64px 0 100px;}
+.prose h2{font-size:1.3rem;font-weight:800;letter-spacing:-0.03em;margin:40px 0 12px;color:var(--white);}
+.prose h2:first-child{margin-top:0;}
+.prose p{color:var(--muted);font-size:.95rem;line-height:1.8;margin-bottom:16px;}
+.prose p:last-child{margin-bottom:0;}
+.prose a{color:var(--green);text-decoration:none;}
+.prose a:hover{color:var(--green-light);text-decoration:underline;}
+.prose ul{list-style:none;padding:0;margin-bottom:16px;display:flex;flex-direction:column;gap:8px;}
+.prose ul li{color:var(--muted);font-size:.95rem;line-height:1.75;padding-left:18px;position:relative;}
+.prose ul li::before{content:"";position:absolute;left:0;top:10px;width:5px;height:5px;border-radius:50%;background:var(--green);}
+.prose .callout{background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--green);border-radius:0 12px 12px 0;padding:20px 24px;margin:28px 0;}
+.prose .callout p{margin:0;font-size:.92rem;}
+.prose .callout strong{color:var(--white);}
+.prose .updated{font-size:.78rem;color:var(--muted-2);margin-bottom:36px;padding-bottom:24px;border-bottom:1px solid var(--border);}
+.footer-outer{border-top:1px solid var(--border);}
+footer{padding:36px 28px;display:flex;align-items:center;justify-content:space-between;max-width:1200px;margin:0 auto;color:var(--muted-2);font-size:.83rem;flex-wrap:wrap;gap:16px;}
+.footer-links{display:flex;gap:20px;flex-wrap:wrap;}
+.footer-links a{color:var(--muted-2);text-decoration:none;transition:color .15s;}
+.footer-links a:hover{color:var(--muted);}
+@media(max-width:680px){
+  nav{height:80px;} .logo-img{height:64px;} .nav-links{display:none;}
+  .page-hero{padding-top:130px;} footer{flex-direction:column;text-align:center;}
+}
+
+
+/* ── COOKIE BANNER ── */
+.cookie-banner{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(140px);z-index:999999;width:calc(100% - 48px);max-width:700px;background:#111;border:1px solid rgba(34,197,94,.25);border-radius:16px;padding:22px 26px;display:flex;align-items:center;justify-content:space-between;gap:20px;box-shadow:0 24px 60px rgba(0,0,0,.8);transition:transform .45s cubic-bezier(.34,1.4,.64,1),opacity .35s ease;opacity:0;pointer-events:none;}
+.cookie-banner.cb-visible{transform:translateX(-50%) translateY(0);opacity:1;pointer-events:all;}
+.cookie-text{font-size:.82rem;color:#a0a0a0;line-height:1.6;flex:1;font-family:'Inter',sans-serif;}
+.cookie-text strong{color:#f5f5f5;}
+.cookie-text a{color:#22C55E;text-decoration:none;}
+.cookie-text a:hover{text-decoration:underline;}
+.cookie-btns{display:flex;gap:10px;flex-shrink:0;}
+.cookie-accept{background:#22C55E;color:#000;border:none;padding:10px 20px;border-radius:8px;font-size:.82rem;font-weight:700;cursor:pointer;font-family:'Inter',sans-serif;white-space:nowrap;transition:background .15s;}
+.cookie-accept:hover{background:#4ade80;}
+.cookie-decline{background:transparent;color:#777;border:1px solid rgba(255,255,255,.12);padding:10px 16px;border-radius:8px;font-size:.82rem;font-weight:600;cursor:pointer;font-family:'Inter',sans-serif;white-space:nowrap;transition:color .15s,border-color .15s;}
+.cookie-decline:hover{color:#aaa;border-color:rgba(255,255,255,.25);}
+@media(max-width:600px){
+  .cookie-banner{flex-direction:column;align-items:flex-start;bottom:90px;padding:18px 20px;width:calc(100% - 32px);}
+  .cookie-btns{width:100%;}
+  .cookie-accept,.cookie-decline{flex:1;text-align:center;}
+}
+
+</style>
+
+  <link rel="canonical" href="https://tickerbrew.com/disclaimer" />
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="apple-touch-icon" href="favicon.png" />
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://tickerbrew.com/disclaimer" />
+  <meta property="og:title"       content="Financial Disclaimer — TickerBrew" />
+  <meta property="og:description" content="TickerBrew is market commentary only, not financial advice. Read before investing." />
+  <meta property="og:image"       content="https://tickerbrew.com/og-image.jpg" />
+  <meta property="og:site_name"   content="TickerBrew" />
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="Financial Disclaimer — TickerBrew" />
+  <meta name="twitter:description" content="TickerBrew is market commentary only, not financial advice. Read before investing." />
+  <meta name="twitter:image"       content="https://tickerbrew.com/og-image.jpg" />
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a href="index.html"><img class="logo-img" src="nav-logo.png" alt="TickerBrew"></a>
+    <div class="nav-links">
+      <a href="index.html#why">Why TickerBrew</a>
+      <a href="index.html#faq">FAQ</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="#cta" class="nav-btn">Get Free Access &rarr;</a>
+    </div>
+  </div>
+</nav>
+
+
+<section class="page-hero">
+  <div class="container">
+    <div class="eyebrow">Important</div>
+    <h1>Financial <span class="accent">Disclaimer</span></h1>
+    <p>Please read this carefully before acting on anything you read in TickerBrew.</p>
+  </div>
+</section>
+<section class="page-body">
+  <div class="container">
+    <div class="prose">
+      <p class="updated">Last updated: May 30, 2026</p>
+      <div class="callout"><p><strong>The bottom line:</strong> TickerBrew is market commentary and news synthesis — not financial advice. We are not registered investment advisors. Nothing we publish should be interpreted as a recommendation to buy, sell, or hold any security. Always do your own research and consult a qualified professional before making investment decisions.</p></div>
+      <h2>For Informational Purposes Only</h2>
+      <p>All content published by TickerBrew — including but not limited to the daily brief, website copy, and any associated materials — is provided solely for informational and educational purposes. It does not constitute financial, investment, legal, or tax advice of any kind.</p>
+      <h2>Not an Investment Advisor</h2>
+      <p>TickerBrew is not a registered investment advisor, broker-dealer, or financial planner. We are not registered with the Securities and Exchange Commission (SEC), the Financial Industry Regulatory Authority (FINRA), or any other regulatory body. Our content is news commentary and market synthesis, not personalized investment guidance.</p>
+      <h2>No Recommendation to Trade</h2>
+      <p>Any reference to specific securities, asset classes, companies, or market instruments in our newsletter is for illustrative and informational purposes only. It does not constitute a recommendation, solicitation, or offer to buy or sell any security. Past performance of any security or market trend referenced in our content is not a guarantee or reliable indicator of future results.</p>
+      <h2>Investment Risk</h2>
+      <p>All investments carry risk, including the potential loss of principal. Markets are inherently volatile and unpredictable. You should carefully consider your own financial situation, risk tolerance, and investment objectives before making any investment decisions. TickerBrew accepts no responsibility for any financial outcomes resulting from decisions made in reliance on our content.</p>
+      <h2>Do Your Own Research</h2>
+      <p>We encourage all readers to conduct their own independent research and due diligence before acting on any information presented in TickerBrew. Consult with a qualified, licensed financial professional who can assess your individual circumstances before making any investment decision.</p>
+      <h2>Accuracy of Information</h2>
+      <p>While we strive to ensure the accuracy of the information we publish, TickerBrew makes no representations or warranties as to the completeness, accuracy, or timeliness of the content. Market data, news, and analysis change rapidly and may be outdated by the time you read them.</p>
+      <h2>Third-Party Sources</h2>
+      <p>TickerBrew synthesizes information from publicly available sources. We are not responsible for the accuracy or reliability of third-party sources referenced in our content.</p>
+      <h2>Questions</h2>
+      <p>If you have questions about this disclaimer, contact us at <a href="mailto:hello@mail.tickerbrew.com">hello@mail.tickerbrew.com</a>.</p>
+    </div>
+  </div>
+</section>
+
+
+<div class="footer-outer">
+  <footer>
+    <span>&copy; 2026 TickerBrew &mdash; Stay sharp. Stay brewed.</span>
+    <div class="footer-links">
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms of Use</a>
+      <a href="disclaimer.html">Financial Disclaimer</a>
+      <a href="cookies.html">Cookie Policy</a>
+    </div>
+  </footer>
+</div>
+<!-- COOKIE BANNER -->
+<div class="cookie-banner" id="cookieBanner" role="dialog" aria-label="Cookie consent">
+  <p class="cookie-text"><strong>We use cookies.</strong> TickerBrew uses Google Analytics to understand how visitors use our site. You can accept or decline non-essential cookies. <a href="cookies.html">Learn more</a></p>
+  <div class="cookie-btns">
+    <button class="cookie-decline" id="cookieDecline">Decline</button>
+    <button class="cookie-accept" id="cookieAccept">Accept</button>
+  </div>
+</div>
+<script>
+(function(){
+  var KEY   = 'tb_cookie_consent';
+  var GA_ID = 'G-636HSS2SNC';
+  var saved = '';
+  try{ saved = localStorage.getItem(KEY) || ''; }catch(e){}
+  function loadGA(){
+    if(window._gaLoaded) return;
+    window._gaLoaded = true;
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id='+GA_ID;
+    document.head.appendChild(s);
+    window.dataLayer = window.dataLayer||[];
+    function gtag(){dataLayer.push(arguments);}
+    window.gtag = gtag;
+    gtag('js', new Date());
+    gtag('config', GA_ID);
+  }
+  if(saved === 'accepted') loadGA();
+  function hideBanner(banner){
+    banner.classList.remove('cb-visible');
+    setTimeout(function(){banner.style.display='none';}, 450);
+  }
+  document.addEventListener('DOMContentLoaded', function(){
+    var banner = document.getElementById('cookieBanner');
+    var btnOK  = document.getElementById('cookieAccept');
+    var btnNo  = document.getElementById('cookieDecline');
+    if(!banner) return;
+    if(!saved){ setTimeout(function(){ banner.classList.add('cb-visible'); }, 1200); }
+    else { banner.style.display = 'none'; }
+    if(btnOK) btnOK.addEventListener('click', function(){
+      try{localStorage.setItem(KEY,'accepted');}catch(e){}
+      loadGA(); hideBanner(banner);
+    });
+    if(btnNo) btnNo.addEventListener('click', function(){
+      try{localStorage.setItem(KEY,'declined');}catch(e){}
+      hideBanner(banner);
+    });
+  });
+})();
+</script>
+</body>
+</html>
