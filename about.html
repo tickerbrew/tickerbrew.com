@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>About — TickerBrew Market Intelligence</title>
+<meta name="description" content="TickerBrew is a free daily market intelligence brief built for serious investors. Learn who's behind it and why it exists." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #050505;
+  --surface: #0d0d0d;
+  --surface-2: #141414;
+  --border: rgba(255,255,255,.07);
+  --green: #22C55E;
+  --green-light: #4ade80;
+  --green-dim: rgba(34,197,94,.12);
+  --white: #f5f5f5;
+  --muted: #a0a0a0;
+  --muted-2: #666;
+}
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body {
+  background:var(--bg);
+  color:var(--white);
+  font-family:'Inter', sans-serif;
+  overflow-x:hidden;
+  line-height:1.6;
+  -webkit-font-smoothing: antialiased;
+}
+body::before {
+  content:"";
+  position:fixed;
+  inset:0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.035'/%3E%3C/svg%3E");
+  pointer-events:none;
+  z-index:100;
+  opacity:.4;
+}
+
+/* NAV */
+nav {
+  position:fixed;
+  top:0; left:0; right:0;
+  z-index:1000;
+  height:110px;
+  background:rgba(5,5,5,.88);
+  backdrop-filter:blur(24px) saturate(180%);
+  border-bottom:1px solid var(--border);
+}
+.nav-inner {
+  max-width:1200px;
+  height:100%;
+  margin:0 auto;
+  padding:0 28px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+.logo-img { height:100px; width:auto; display:block; }
+.nav-links { display:flex; gap:32px; align-items:center; }
+.nav-links a {
+  color:var(--muted);
+  text-decoration:none;
+  font-size:.88rem;
+  font-weight:500;
+  transition:color .15s ease;
+}
+.nav-links a:hover { color:var(--white); }
+.nav-links a.active { color:var(--white); }
+.nav-btn {
+  background:var(--green) !important;
+  color:#000 !important;
+  padding:10px 20px;
+  border-radius:8px;
+  font-weight:700 !important;
+  font-size:.88rem !important;
+}
+.nav-btn:hover { background:var(--green-light) !important; }
+
+.container { max-width:1200px; margin:0 auto; padding:0 28px; }
+
+/* HERO */
+.about-hero {
+  padding-top:180px;
+  padding-bottom:90px;
+  position:relative;
+  overflow:hidden;
+  text-align:center;
+}
+.about-hero::before {
+  content:"";
+  position:absolute;
+  width:700px; height:700px;
+  background:radial-gradient(circle, rgba(34,197,94,.11) 0%, transparent 65%);
+  top:-150px; left:50%;
+  transform:translateX(-50%);
+  pointer-events:none;
+}
+.about-hero::after {
+  content:"";
+  position:absolute;
+  inset:0;
+  background-image:
+    linear-gradient(rgba(255,255,255,.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.02) 1px, transparent 1px);
+  background-size:60px 60px;
+  pointer-events:none;
+  mask-image:radial-gradient(ellipse 80% 60% at 50% 50%, black 20%, transparent 100%);
+}
+.eyebrow {
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  padding:8px 16px;
+  border-radius:999px;
+  background:var(--green-dim);
+  border:1px solid rgba(34,197,94,.22);
+  margin-bottom:26px;
+  font-size:.8rem;
+  font-weight:600;
+  color:var(--green-light);
+  letter-spacing:.04em;
+  text-transform:uppercase;
+}
+.about-hero h1 {
+  font-size:clamp(3rem,6vw,5rem);
+  line-height:.95;
+  letter-spacing:-0.055em;
+  font-weight:900;
+  margin-bottom:22px;
+}
+.about-hero h1 .accent { color:var(--green); }
+.about-hero .sub {
+  max-width:640px;
+  margin:0 auto;
+  color:var(--muted);
+  font-size:1.08rem;
+  line-height:1.7;
+}
+
+/* STORY */
+.story {
+  padding:90px 0;
+  border-top:1px solid var(--border);
+}
+.story-grid {
+  display:grid;
+  grid-template-columns:1fr 1.2fr;
+  gap:80px;
+  align-items:start;
+}
+.story-label {
+  text-transform:uppercase;
+  font-size:.7rem;
+  font-weight:700;
+  letter-spacing:.14em;
+  color:var(--green);
+  margin-bottom:16px;
+}
+.story-grid h2 {
+  font-size:2.4rem;
+  font-weight:900;
+  letter-spacing:-0.05em;
+  line-height:1.05;
+  margin-bottom:24px;
+}
+.story-grid h2 .accent { color:var(--green); }
+.story-body p {
+  color:var(--muted);
+  font-size:.98rem;
+  line-height:1.8;
+  margin-bottom:20px;
+}
+.story-body p:last-child { margin-bottom:0; }
+.story-body strong { color:var(--white); }
+
+/* MISSION CARDS */
+.mission {
+  padding:0 0 90px;
+}
+.mission-grid {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+.m-card {
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:20px;
+  padding:36px 32px;
+  position:relative;
+  overflow:hidden;
+  transition:transform .2s ease, border-color .2s ease;
+}
+.m-card::before {
+  content:"";
+  position:absolute;
+  top:0; left:0; right:0;
+  height:2px;
+  background:linear-gradient(90deg, transparent, var(--green), transparent);
+  opacity:0;
+  transition:opacity .25s ease;
+}
+.m-card:hover { transform:translateY(-4px); border-color:rgba(34,197,94,.2); }
+.m-card:hover::before { opacity:1; }
+.m-icon {
+  width:44px; height:44px;
+  border-radius:12px;
+  background:var(--green-dim);
+  border:1px solid rgba(34,197,94,.2);
+  display:flex; align-items:center; justify-content:center;
+  margin-bottom:20px;
+  font-size:1.2rem;
+}
+.m-card h3 { font-size:1.05rem; font-weight:700; margin-bottom:10px; letter-spacing:-0.02em; }
+.m-card p { color:var(--muted); font-size:.9rem; line-height:1.65; }
+
+/* VALUES */
+.values {
+  padding:0 0 90px;
+}
+.values-inner {
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:24px;
+  padding:56px;
+}
+.values-label {
+  text-transform:uppercase;
+  font-size:.7rem;
+  font-weight:700;
+  letter-spacing:.14em;
+  color:var(--green);
+  margin-bottom:16px;
+}
+.values-inner h2 {
+  font-size:2rem;
+  font-weight:900;
+  letter-spacing:-0.05em;
+  margin-bottom:40px;
+}
+.values-inner h2 .accent { color:var(--green); }
+.values-list { display:flex; flex-direction:column; gap:0; }
+.value-row {
+  display:grid;
+  grid-template-columns:180px 1fr;
+  gap:32px;
+  align-items:start;
+  padding:24px 0;
+  border-bottom:1px solid var(--border);
+}
+.value-row:last-child { border-bottom:none; padding-bottom:0; }
+.value-row:first-child { padding-top:0; }
+.value-name {
+  font-size:.88rem;
+  font-weight:700;
+  color:var(--green);
+  letter-spacing:.02em;
+  padding-top:2px;
+}
+.value-desc { color:var(--muted); font-size:.92rem; line-height:1.7; }
+.value-desc strong { color:var(--white); }
+
+/* CTA */
+.about-cta {
+  padding:90px 0 110px;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+}
+.about-cta::before {
+  content:"";
+  position:absolute;
+  width:600px; height:600px;
+  background:radial-gradient(circle, rgba(34,197,94,.1) 0%, transparent 65%);
+  top:-100px; left:50%;
+  transform:translateX(-50%);
+  pointer-events:none;
+}
+.about-cta h2 {
+  font-size:clamp(2.4rem,4.5vw,4rem);
+  line-height:.96;
+  letter-spacing:-0.06em;
+  font-weight:900;
+  margin-bottom:18px;
+}
+.about-cta h2 .accent { color:var(--green); }
+.about-cta .sub { max-width:560px; margin:0 auto 36px; color:var(--muted); font-size:1rem; }
+.signup-wrap {
+  background:var(--surface-2);
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:16px;
+  padding:10px;
+  display:flex;
+  gap:10px;
+  max-width:500px;
+  margin:0 auto;
+  box-shadow:0 30px 80px rgba(0,0,0,.5);
+}
+.signup-wrap input {
+  flex:1;
+  background:transparent;
+  border:none;
+  outline:none;
+  color:var(--white);
+  padding:16px 18px;
+  font-size:.95rem;
+  font-family:'Inter', sans-serif;
+}
+.signup-wrap input::placeholder { color:#555; }
+.cta-btn {
+  background:var(--green);
+  border:none;
+  color:#000;
+  padding:16px 26px;
+  border-radius:10px;
+  font-weight:800;
+  font-size:.92rem;
+  cursor:pointer;
+  transition:background .15s ease, transform .15s ease, box-shadow .15s ease;
+  font-family:'Inter', sans-serif;
+  white-space:nowrap;
+}
+.cta-btn:hover {
+  background:var(--green-light);
+  transform:translateY(-1px);
+  box-shadow:0 8px 28px rgba(34,197,94,.3);
+}
+.form-meta { margin-top:14px; color:var(--muted-2); font-size:.8rem; }
+
+/* FOOTER */
+.footer-outer { border-top:1px solid var(--border); }
+footer {
+  padding:36px 28px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  max-width:1200px;
+  margin:0 auto;
+  color:var(--muted-2);
+  font-size:.83rem;
+}
+.footer-links { display:flex; gap:20px; flex-wrap:wrap; }
+.footer-links a { color:var(--muted-2); text-decoration:none; transition:color .15s; }
+.footer-links a:hover { color:var(--muted); }
+
+/* MOBILE */
+@media(max-width:980px) {
+  .story-grid { grid-template-columns:1fr; gap:40px; }
+  .mission-grid { grid-template-columns:1fr; }
+  .values-inner { padding:36px 28px; }
+  .value-row { grid-template-columns:1fr; gap:8px; }
+}
+@media(max-width:680px) {
+  nav { height:80px; }
+  .logo-img { height:64px; }
+  .nav-links { display:none; }
+  .about-hero { padding-top:130px; }
+  .about-hero h1 { font-size:2.6rem; }
+  .signup-wrap { flex-direction:column; }
+  .cta-btn { width:100%; }
+  footer { flex-direction:column; gap:16px; text-align:center; }
+}
+
+/* ── COOKIE BANNER ── */
+.cookie-banner{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(140px);z-index:999999;width:calc(100% - 48px);max-width:700px;background:#111;border:1px solid rgba(34,197,94,.25);border-radius:16px;padding:22px 26px;display:flex;align-items:center;justify-content:space-between;gap:20px;box-shadow:0 24px 60px rgba(0,0,0,.8);transition:transform .45s cubic-bezier(.34,1.4,.64,1),opacity .35s ease;opacity:0;pointer-events:none;}
+.cookie-banner.cb-visible{transform:translateX(-50%) translateY(0);opacity:1;pointer-events:all;}
+.cookie-text{font-size:.82rem;color:#a0a0a0;line-height:1.6;flex:1;font-family:'Inter',sans-serif;}
+.cookie-text strong{color:#f5f5f5;}
+.cookie-text a{color:#22C55E;text-decoration:none;}
+.cookie-text a:hover{text-decoration:underline;}
+.cookie-btns{display:flex;gap:10px;flex-shrink:0;}
+.cookie-accept{background:#22C55E;color:#000;border:none;padding:10px 20px;border-radius:8px;font-size:.82rem;font-weight:700;cursor:pointer;font-family:'Inter',sans-serif;white-space:nowrap;transition:background .15s;}
+.cookie-accept:hover{background:#4ade80;}
+.cookie-decline{background:transparent;color:#777;border:1px solid rgba(255,255,255,.12);padding:10px 16px;border-radius:8px;font-size:.82rem;font-weight:600;cursor:pointer;font-family:'Inter',sans-serif;white-space:nowrap;transition:color .15s,border-color .15s;}
+.cookie-decline:hover{color:#aaa;border-color:rgba(255,255,255,.25);}
+@media(max-width:600px){
+  .cookie-banner{flex-direction:column;align-items:flex-start;bottom:90px;padding:18px 20px;width:calc(100% - 32px);}
+  .cookie-btns{width:100%;}
+  .cookie-accept,.cookie-decline{flex:1;text-align:center;}
+}
+
+</style>
+
+  <link rel="canonical" href="https://tickerbrew.com/about" />
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="apple-touch-icon" href="favicon.png" />
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://tickerbrew.com/about" />
+  <meta property="og:title"       content="About TickerBrew — Built by Investors, for Investors" />
+  <meta property="og:description" content="Learn who built TickerBrew and why. We deliver elite free daily market intelligence to 1,200+ investors every morning." />
+  <meta property="og:image"       content="https://tickerbrew.com/og-image.jpg" />
+  <meta property="og:site_name"   content="TickerBrew" />
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="About TickerBrew — Built by Investors, for Investors" />
+  <meta name="twitter:description" content="Learn who built TickerBrew and why. We deliver elite free daily market intelligence to 1,200+ investors every morning." />
+  <meta name="twitter:image"       content="https://tickerbrew.com/og-image.jpg" />
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="index.html">
+      <img class="logo-img" src="nav-logo.png" alt="TickerBrew — Market Intelligence">
+    </a>
+    <div class="nav-links">
+      <a href="index.html#why">Why TickerBrew</a>
+      <a href="index.html#how-it-works">How It Works</a>
+      <a href="index.html#faq">FAQ</a>
+      <a href="archive/">Archive</a>
+      <a href="about.html" class="active">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="index.html#cta" class="nav-btn">Get Free Access &rarr;</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="about-hero">
+  <div class="container">
+    <div class="eyebrow">Our story</div>
+    <h1>Built by investors,<br><span class="accent">for investors.</span></h1>
+    <p class="sub">
+      TickerBrew exists because most financial news is designed to keep you reading — not to help you think. We built something different.
+    </p>
+  </div>
+</section>
+
+<!-- STORY -->
+<section class="story">
+  <div class="container">
+    <div class="story-grid">
+      <div>
+        <div class="story-label">Why we built this</div>
+        <h2>The noise was<br><span class="accent">unbearable.</span></h2>
+      </div>
+      <div class="story-body">
+        <p>
+          Every morning, serious investors face the same problem: <strong>too much information, too little signal.</strong> Financial media is built around pageviews and engagement, not portfolio performance. You end up reading twelve articles about the same earnings miss and missing the one macro shift that actually matters.
+        </p>
+        <p>
+          TickerBrew was built to fix that. Every morning, before U.S. markets open, we deliver a single, focused brief that tells you exactly what moved overnight, what it means, and what to watch next. <strong>No recycled commentary. No filler. No noise.</strong>
+        </p>
+        <p>
+          We cover the stories institutional desks are paying attention to — Fed policy, macro cross currents, geopolitical shifts, tech market leadership, and smart money positioning — and we synthesize them into something you can actually act on in five minutes.
+        </p>
+        <p>
+          The daily brief is free to access — no credit card, no catch. And as we grow, we're building optional premium tiers for readers who want to go deeper. But the morning brief that started it all? That stays free.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MISSION CARDS -->
+<section class="mission">
+  <div class="container">
+    <div class="mission-grid">
+
+      <div class="m-card">
+        <div class="m-icon">&#127919;</div>
+        <h3>Our mission</h3>
+        <p>Give every serious investor access to the same quality of market intelligence that institutional desks pay for — completely free, every single morning.</p>
+      </div>
+
+      <div class="m-card">
+        <div class="m-icon">&#9993;</div>
+        <h3>What we publish</h3>
+        <p>One brief, five days a week, before the opening bell. Headline News, Under the Radar, Smart Money Watch, Market Takeaway, and Tomorrow's Edge — nothing more, nothing less.</p>
+      </div>
+
+      <div class="m-card">
+        <div class="m-icon">&#128100;</div>
+        <h3>Who reads it</h3>
+        <p>Over 1,200 investors — from full time traders and analysts to founders and long-term allocators — who want real context, not recycled takes, every morning.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- VALUES -->
+<section class="values">
+  <div class="container">
+    <div class="values-inner">
+      <div class="values-label">What we stand for</div>
+      <h2>The <span class="accent">TickerBrew</span> principles</h2>
+      <div class="values-list">
+
+        <div class="value-row">
+          <div class="value-name">Signal over noise</div>
+          <div class="value-desc">We read hundreds of sources so you don't have to. If a story doesn't carry real market weight, it doesn't make it into your inbox. <strong>Quality over quantity, every time.</strong></div>
+        </div>
+
+        <div class="value-row">
+          <div class="value-name">Context, not just headlines</div>
+          <div class="value-desc">Every story comes with a "Why It Matters" — because knowing <em>what</em> happened is useless without understanding <strong>what it means for your positioning.</strong></div>
+        </div>
+
+        <div class="value-row">
+          <div class="value-name">Respect your time</div>
+          <div class="value-desc">Five minutes. That's what we design every brief to take. If it can't be read in that window, we haven't done our job of cutting it down to what truly matters.</div>
+        </div>
+
+        <div class="value-row">
+          <div class="value-name">Free to start</div>
+          <div class="value-desc">The daily morning brief is free — no credit card, no trial countdown. <strong>We're also building optional paid tiers</strong> for readers who want an evening recap, weekly deep dives, and more. The core brief will always have a free tier.</div>
+        </div>
+
+        <div class="value-row">
+          <div class="value-name">No spam. Ever.</div>
+          <div class="value-desc">We will never sell or share your email address — period. You'll get the daily brief every weekday morning, plus the occasional update from us when something important changes (like a new product tier launching). Every email has a one-click unsubscribe. That's the full list of things we'll send you.</div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="about-cta">
+  <div class="container">
+    <h2>
+      Ready to start<br>
+      <span class="accent">every morning smarter?</span>
+    </h2>
+    <p class="sub">Join 1,200+ investors who start every morning with an edge. No credit card required.</p>
+    <form class="signup-wrap" onsubmit="window.open('https://newsletter.tickerbrew.com','_blank');return false;" action="https://newsletter.tickerbrew.com" method="GET" target="_blank">
+      <input type="email" placeholder="Enter your email address" name="email">
+      <button class="cta-btn" type="submit">Subscribe Free &rarr;</button>
+    </form>
+    <p class="form-meta">Daily market intelligence &nbsp;&middot;&nbsp; No credit card &nbsp;&middot;&nbsp; Unsubscribe anytime</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<div class="footer-outer">
+  <footer>
+    <span>&copy; 2026 TickerBrew &mdash; Stay sharp. Stay brewed.</span>
+    <div class="footer-links">
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Use</a>
+      <a href="disclaimer.html">Financial Disclaimer</a>
+      <a href="cookies.html">Cookie Policy</a>
+    </div>
+  </footer>
+</div>
+
+<!-- COOKIE BANNER -->
+<div class="cookie-banner" id="cookieBanner" role="dialog" aria-label="Cookie consent">
+  <p class="cookie-text"><strong>We use cookies.</strong> TickerBrew uses Google Analytics to understand how visitors use our site. You can accept or decline non-essential cookies. <a href="cookies.html">Learn more</a></p>
+  <div class="cookie-btns">
+    <button class="cookie-decline" id="cookieDecline">Decline</button>
+    <button class="cookie-accept" id="cookieAccept">Accept</button>
+  </div>
+</div>
+<script>
+(function(){
+  var KEY   = 'tb_cookie_consent';
+  var GA_ID = 'G-636HSS2SNC';
+  var saved = '';
+  try{ saved = localStorage.getItem(KEY) || ''; }catch(e){}
+  function loadGA(){
+    if(window._gaLoaded) return;
+    window._gaLoaded = true;
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id='+GA_ID;
+    document.head.appendChild(s);
+    window.dataLayer = window.dataLayer||[];
+    function gtag(){dataLayer.push(arguments);}
+    window.gtag = gtag;
+    gtag('js', new Date());
+    gtag('config', GA_ID);
+  }
+  if(saved === 'accepted') loadGA();
+  function hideBanner(banner){
+    banner.classList.remove('cb-visible');
+    setTimeout(function(){banner.style.display='none';}, 450);
+  }
+  document.addEventListener('DOMContentLoaded', function(){
+    var banner = document.getElementById('cookieBanner');
+    var btnOK  = document.getElementById('cookieAccept');
+    var btnNo  = document.getElementById('cookieDecline');
+    if(!banner) return;
+    if(!saved){ setTimeout(function(){ banner.classList.add('cb-visible'); }, 1200); }
+    else { banner.style.display = 'none'; }
+    if(btnOK) btnOK.addEventListener('click', function(){
+      try{localStorage.setItem(KEY,'accepted');}catch(e){}
+      loadGA(); hideBanner(banner);
+    });
+    if(btnNo) btnNo.addEventListener('click', function(){
+      try{localStorage.setItem(KEY,'declined');}catch(e){}
+      hideBanner(banner);
+    });
+  });
+})();
+</script>
+</body>
+</html>
