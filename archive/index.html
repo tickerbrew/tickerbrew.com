@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="apple-touch-icon" href="/favicon.png" />
+  <title>Market News Archive | TickerBrew</title>
+  <meta name="description" content="Daily market intelligence archive — Fed policy, AI stocks, earnings, and macro news from TickerBrew.">
+  <link rel="canonical" href="https://tickerbrew.com/archive/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#050505;--surface:#0d0d0d;--surface-2:#141414;
+      --border:rgba(255,255,255,.07);--border-strong:rgba(255,255,255,.14);
+      --green:#22C55E;--green-light:#4ade80;--green-dim:rgba(34,197,94,.12);--green-glow:rgba(34,197,94,.25);
+      --white:#f5f5f5;--muted:#a0a0a0;--muted-2:#666;
+      --serif:Georgia,'Times New Roman',serif;
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:'Inter',sans-serif;font-size:16px;line-height:1.7;color:var(--white);background:var(--bg);-webkit-font-smoothing:antialiased}
+
+    nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:90px;background:rgba(5,5,5,.88);backdrop-filter:blur(24px) saturate(180%);border-bottom:1px solid var(--border)}
+    .nav-inner{max-width:1200px;height:100%;margin:0 auto;padding:0 28px;display:flex;align-items:center;justify-content:space-between}
+    .logo-img{height:80px;width:auto;display:block}
+    .nav-links{display:flex;gap:32px;align-items:center}
+    .nav-links a{color:var(--muted);text-decoration:none;font-size:.88rem;font-weight:500;transition:color .15s ease}
+    .nav-links a:hover{color:var(--white)}
+    .nav-links a.active{color:var(--green)}
+    .nav-btn{background:var(--green)!important;color:#000!important;padding:10px 22px;border-radius:8px;font-weight:700!important;font-size:.88rem!important;white-space:nowrap;flex-shrink:0;transition:background .15s ease,transform .15s ease!important}
+    .nav-btn:hover{background:var(--green-light)!important;transform:translateY(-1px)}
+
+    .page-header{padding:160px 28px 40px;max-width:1200px;margin:0 auto}
+    .label{display:inline-flex;align-items:center;gap:8px;background:var(--green-dim);border:1px solid var(--green-glow);border-radius:100px;padding:6px 16px;font-size:.75rem;font-weight:600;color:var(--green);letter-spacing:.05em;text-transform:uppercase;margin-bottom:24px}
+    .label-dot{width:6px;height:6px;background:var(--green);border-radius:50%;animation:pulse 2s infinite}
+    @keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+    .page-header h1{font-family:var(--serif);font-size:clamp(28px,5vw,42px);font-weight:700;letter-spacing:-.02em;margin-bottom:8px}
+    .page-header h1 span{color:var(--green)}
+    .subtitle{font-size:15px;color:var(--muted);margin-bottom:28px}
+
+    .filters{display:flex;flex-wrap:wrap;gap:8px;max-width:1200px;margin:0 auto;padding:0 28px 40px}
+    .filter-pill{font-family:'Inter',sans-serif;font-size:12.5px;font-weight:700;letter-spacing:.02em;border:1px solid var(--border-strong);background:var(--surface);color:var(--muted);padding:8px 16px;border-radius:20px;cursor:pointer;transition:all .15s ease}
+    .filter-pill:hover{border-color:var(--green);color:var(--green-light)}
+    .filter-pill.active{background:var(--green);color:#000;border-color:var(--green)}
+
+    .archive-container{max-width:1200px;margin:0 auto;padding:0 28px 100px}
+    .archive-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:20px}
+    .card{display:block;background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:26px;text-decoration:none;color:inherit;transition:border-color .2s ease,transform .2s ease,background .2s ease;position:relative;overflow:hidden}
+    .card::before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,var(--green-dim) 0%,transparent 60%);opacity:0;transition:opacity .2s ease;pointer-events:none}
+    .card:hover{border-color:var(--green-glow);transform:translateY(-2px);background:var(--surface-2)}
+    .card:hover::before{opacity:1}
+    .card.hidden{display:none}
+    .card-date{font-size:.72rem;font-weight:600;color:var(--green);text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px}
+    .card h2{font-family:var(--serif);font-size:1.05rem;font-weight:700;line-height:1.4;color:var(--white);margin-bottom:8px}
+    .card p{font-size:.85rem;color:var(--muted);line-height:1.6;margin-bottom:12px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+    .card-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px}
+    .card-tag{font-size:10px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);border:1px solid var(--border-strong);padding:3px 9px;border-radius:20px}
+    .card-arrow{display:inline-flex;align-items:center;gap:6px;font-size:.78rem;font-weight:600;color:var(--green);opacity:0;transform:translateX(-4px);transition:opacity .2s ease,transform .2s ease}
+    .card:hover .card-arrow{opacity:1;transform:translateX(0)}
+
+    .empty-state{display:none;text-align:center;padding:60px 20px;color:var(--muted);font-size:14px}
+    .empty-state.show{display:block}
+
+    footer{max-width:1200px;margin:0 auto;padding:32px 28px;display:flex;align-items:center;justify-content:space-between;border-top:1px solid var(--border);font-size:.8rem;color:var(--muted-2)}
+    footer a{color:var(--muted-2);text-decoration:none}
+    footer a:hover{color:var(--muted)}
+    .footer-links{display:flex;gap:20px}
+
+    @media(max-width:680px){
+      nav{height:64px}.logo-img{height:54px}.nav-links{display:none}
+      .page-header{padding:100px 20px 32px}
+      .filters{padding:0 20px 32px}
+      .archive-container{padding:0 20px 80px}
+      .archive-grid{grid-template-columns:1fr}
+      footer{flex-direction:column;gap:12px;text-align:center}
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="https://tickerbrew.com">
+      <img class="logo-img" src="/nav-logo.png" alt="TickerBrew — Market Intelligence">
+    </a>
+    <div class="nav-links">
+      <a href="/#why">Why TickerBrew</a>
+      <a href="/#how-it-works">How It Works</a>
+      <a href="/#faq">FAQ</a>
+      <a href="/archive/" class="active">Archive</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+      <a href="/#cta" class="nav-btn">Get Free Access &rarr;</a>
+    </div>
+  </div>
+</nav>
+
+<div class="page-header">
+  <h1>Market News <span>Archive</span></h1>
+  <p class="subtitle">29 articles</p>
+</div>
+
+<div class="filters" id="filters">
+  <button class="filter-pill active" data-tag="all">All</button>
+      <button class="filter-pill" data-tag="Federal Reserve">Federal Reserve</button>
+      <button class="filter-pill" data-tag="Interest Rates">Interest Rates</button>
+      <button class="filter-pill" data-tag="Inflation">Inflation</button>
+      <button class="filter-pill" data-tag="Geopolitics">Geopolitics</button>
+      <button class="filter-pill" data-tag="Oil &amp; Energy">Oil &amp; Energy</button>
+      <button class="filter-pill" data-tag="Currencies">Currencies</button>
+      <button class="filter-pill" data-tag="Equities">Equities</button>
+      <button class="filter-pill" data-tag="Tech &amp; AI">Tech &amp; AI</button>
+      <button class="filter-pill" data-tag="Crypto">Crypto</button>
+      <button class="filter-pill" data-tag="Earnings">Earnings</button>
+      <button class="filter-pill" data-tag="Trade Policy">Trade Policy</button>
+      <button class="filter-pill" data-tag="Central Banks">Central Banks</button>
+</div>
+
+<div class="archive-container">
+  <div class="archive-grid" id="archive-grid">
+    
+  <a href="/archive/geopolitical-tensions-oil-rises-fed-policy.html" class="card" data-tags="Geopolitics|Oil &amp; Energy|Federal Reserve|Interest Rates">
+    <div class="card-date">July 14, 2026</div>
+    <h2>US Strikes Iran, Oil Surges; Fed Reviews Policy Amid Inflation Drop</h2>
+    <p>US strikes Iran, oil prices surge, and the Fed considers its long-term policy framework. Markets react to geopolitical risk and central bank signals. Stay sharp.</p>
+    <div class="card-tags"><span class="card-tag">Geopolitics</span><span class="card-tag">Oil &amp; Energy</span><span class="card-tag">Federal Reserve</span><span class="card-tag">Interest Rates</span></div>
+    <span class="card-arrow">Read article &rarr;</span>
+  </a>
+
+  <a href="/archive/strait-hormuz-tensions-escalate-us-sanctions.html" class="card" data-tags="Geopolitics|Oil &amp; Energy|Equities|Tech &amp; AI">
+    <div class="card-date">July 11, 2026</div>
+    <h2>Hormuz Tensions Flare, US Sanctions Iran, Oil Markets Jitter</h2>
+    <p>US demands Iran cease Strait of Hormuz attacks, imposes new sanctions. Oil markets react to escalating Mideast tensions, while tech layoffs persist.</p>
+    <div class="card-tags"><span class="card-tag">Geopolitics</span><span class="card-tag">Oil &amp; Energy</span><span class="card-tag">Equities</span><span class="card-tag">Tech &amp; AI</span></div>
+    <span class="card-arrow">Read article &rarr;</span>
+  </a>
+
+  <a href="/archive/fed-policy-review-hormuz-tensions-rise.html" class="card" data-tags="Federal Reserve|Geopolitics|Oil &amp; Energy|Trade Policy|Tech &amp; AI">
+    <div class="card-date">July 10, 2026</div>
+    <h2>Fed Policy Review &amp; Hormuz Tensions: What's Moving Markets</h2>
+    <p>Fed Chair Warsh names task force experts for policy review. Geopolitical tensions flare in the Strait of Hormuz, triggering new US sanctions and oil market jitters.</p>
+    <div class="card-tags"><span class="card-tag">Federal Reserve</span><span class="card-tag">Geopolitics</span><span class="card-tag">Oil &amp; Energy</span><span class="card-tag">Trade Policy</span><span class="card-tag">Tech &amp; AI</span></div>
+    <span class="card-arrow">Read article &rarr;</span>
+  </a>
+
+  <a href="/archive/fed-reform-hormuz-tensions-ai-recession-risk.html" class="card" data-tags="Federal Reserve|Geopolitics|Oil &amp; Energy|Tech &amp; AI">
+    <div class="card-date">July 9, 2026</div>
+    <h2>Fed Reform, Hormuz Conflict, AI Recession Risk: TickerBrew Daily</h2>
+    <p>Fed Chair Warsh names task forces with Andreessen, McMillon for reform. Hormuz tanker traffic slows amid US-Iran clashes. Apollo warns AI slowdown could trigger recession.</p>
+    <div class="card-tags"><span class="card-tag">Federal Reserve</span><span class="card-tag">Geopolitics</span><span class="card-tag">Oil &amp; Energy</span><span class="card-tag">Tech &amp; AI</span></div>
+    <span class="card-arrow">Read article &rarr;</span>
+  </a>
+
+  <a href="/archive/us-strikes-iran-hormuz-oil-waiver.html" class="card" data-tags="Geopolitics|Oil &amp; Energy|Equities|Central Banks">
+    <div class="card-date">July 7, 2026</div>
+    <h2>US Strikes Iran, Revokes Oil Waiver: Hormuz Tensions Escalate</h2>
+    <p>US launches strikes on Iran, revokes oil waivers after Hormuz attacks. Geopolitical tensions escalate, impacting oil prices and market stability. BOJ dissenter speaks.</p>
+    <div class="card-tags"><span class="card-tag">Geopolitics</span><span class="card-tag">Oil &amp; Energy</span><span class="card-tag">Equities</span><span class="card-tag">Central Banks</span></div>
+    <span class="card-arrow">Read article &rarr;</span>
+  </a>
+
+  <a href="/archive/geopolitical-risks-tech-restructuring-market-caution.html" class="card" data-tags="Geopolitics|Equities|Federal Reserve|Oil &amp; Energy">
+    <div class="card-date">July 6, 2026</div>
+    <h2>Eurozone Recession Fears, Tech Cuts, and Geopolitical Risks Mount</h2>
+    <p>Eurozone recession fears rise amid Middle East tensions and a potential US asset sell-off. Microsoft cuts jobs, Rivian seeks capital, and a tanker attack in Hormuz sparks concern.</p>
+    <div class="card-tags"><span class="card-tag">Geopolitics</span><span class="card-tag">Equities</span><span class="card-tag">Federal Reserve</span><span class="card-tag">Oil &amp; Energy</span></div>
+    <span class="card-arrow">Read article &rarr;</span>
+  </a>
+
+  <a href="/archive/fed-warsh-data-tech-tumble-jobs-report.html" class="card" data-tags="Federal Reserve|Interest Rates|Inflation|Equities">
+    <div class="card-date">July 1, 2026</div>
+    <h2>Fed's Warsh Questions Data, Tech Plunges Before Jobs Report</h2>
+    <p>Fed Chair Warsh questions economic data reliability as tech stocks slide globally. Markets brace for US jobs report amid hawkish Fed stance and rising energy concerns.</p>
+    <div class="card-tags"><span class="card-tag">Federal Reserve</span><span class="card-tag">Interest Rates</span><span class="card-tag">Inflation</span><span class="card-tag">Equities</span></div>
+    <span class="card-arrow">Read article &rarr;</span>
+  </a>
+
+  <a href="/archive/tech-rebounds-oil-climbs-geopolitical-ease.html" class="card" data-tags="Equities|Tech &amp; AI|Geopolitics|Oil &amp; Energy">
+    <div class="card-date">June 29, 2026</div>
+    <h2>Tech Stocks Surge, Oil Rises on US-Iran Deal &amp; Market Calm</h2>
+    <p>Wall Street rallies as US-Iran deal calms markets, boosting tech stocks and oil prices. Defense contractors face new buyback rules. Get today's market edge.</p>
+    <div class="card-tags"><span class="card-tag">Equities</span><span class="card-tag">Tech &amp; AI</span><span class="card-tag">Geopolitics</span><span class="card-tag">Oil &amp; Energy</span></div>
+    <span class="card-arrow">Read article &rarr;</span>
+  </a>
+
+  <a href="/archive/geopolitical-tensions-inflation-fed-rethink-markets.html" class="card" data-tags="Federal Reserve|Interest Rates|Inflation|Geopolitics|Oil &amp; Energy|Equities">
+    <div class="card-date">June 26, 2026</div>
+    <h2>US Strikes Iran, Inflation Surges, Fed Policy Under Scrutiny</h2>
+    <p>US strikes Iran, PCE inflation tops 4.1%, and the Fed faces new pressure. Get TickerBrew's sharp take on market shifts and what's next for investors.</p>
+    <div class="card-tags"><span class="card-tag">Federal Reserve</span><span class="card-tag">Interest Rates</span><span class="card-tag">Inflation</span><span class="card-tag">Geopolitics</span><span class="card-tag">Oil &amp; Energy</span><span class="card-tag">Equities</span></div>
+    <span class="card-arrow">Read article &rarr;</span>
+  </a>
+
+  <a href="/archive/hormuz-attack-inflation-fed-rate-hike.html" class="card" data-tags="Geopolitics|Oil &amp; Energy|Inflation|Federal Reserve">
+    <div class="card-date">June 25, 2026</div>
+    <h2>Hormuz Attack, 4% PCE Inflation Shake Markets, Fed Rate Hike Looms</h2>
+    <p>An attack in the Strait of Hormuz halts shipping evacuations, while Iran issues warnings. US PCE inflation hits 4%, fueling Fed rate hike speculation. Get the market impact.</p>
+    <div class="card-tags"><span class="card-tag">Geopolitics</span><span class="card-tag">Oil &amp; Energy</span><span class="card-tag">Inflation</span><span class="card-tag">Federal Reserve</span></div>
+    <span class="card-arrow">Read article &rarr;</span>
+  </a>
+
+  <a href="/archive/banks-unleash-capital-oil-dips.html" class="card" data-tags="Federal Reserve|Equities|Oil &amp; Energy|Central Banks">
+    <div class="card-date">June 24, 2026</div>
+    <h2>JPMorgan, Goldman Boost Capital Returns; Oil Below $70</h2>
+    <p>JPMorgan and Goldman Sachs announce massive capital returns post-Fed stress tests. Oil prices fall below $70 as Strait of Hormuz tensions ease. Get today's market insights.</p>
+    <div class="card-tags"><span class="card-tag">Federal Reserve</span><span class="card-tag">Equities</span><span class="card-tag">Oil &amp; Energy</span><span class="card-tag">Central Banks</span></div>
+    <span class="card-arrow">Read article &rarr;</span>
+  </a>
+
+  <a href="/archive/ipo-crash-fears-oil-surges-hormuz.html" class="card" data-tags="Equities|Oil &amp; Energy|Geopolitics|Federal Reserve">
+    <div class="card-date">June 22, 2026</div>
+    <h2>IPO Bubble Fears &amp; Oil Shock: Markets Brace for Volatility</h2>
+    <p>SpaceX's volatile IPO ride sparks market crash fears. Oil prices jump as Iran declares Strait of Hormuz closed. Asia markets slip, repricing Fed expectations.</p>
+    <div class="card-tags"><span class="card-tag">Equities</span><span class="card-tag">Oil &amp; Energy</span><span class="card-tag">Geopolitics</span><span class="card-tag">Federal Reserve</span></div>
+    <span class="card-arrow">Read article &rarr;</span>
+  </a>
+
+  <a href="/archive/fed-warsh-reshapes-central-bank-hormuz-flare.html" class="card" data-tags="Federal Reserve|Interest Rates|Geopolitics|Tech &amp; AI">
+    <div class="card-date">June 21, 2026</div>
+    <h2>Warsh Remakes Fed, Iran Closes Hormuz, Tech Eyes Bonds</h2>
+    <p>Federal Reserve Chair Kevin Warsh launches a sweeping policy review. Geopolitical tensions rise as Iran closes the Strait of Hormuz. Tech giants eye bond markets for AI funding.</p>
+    <div class="card-tags"><span class="card-tag">Federal Reserve</span><span class="card-tag">Interest Rates</span><span class="card-tag">Geopolitics</span><span class="card-tag">Tech &amp; AI</span></div>
+    <span class="card-arrow">Read article &rarr;</span>
+  </a>
+
+  <a href="/archive/iran-closes-hormuz-oil-shock-markets-brace.html" class="card" data-tags="Geopolitics|Oil &amp; Energy|Inflation|Equities">
+    <div class="card-date">June 20, 2026</div>
+    <h2>Iran Closes Strait of Hormuz, Oil Markets Face Supply Shock</h2>
+    <p>Iran closes the Strait of Hormuz amid escalating conflict in Lebanon, sending shockwaves through global oil markets. US-Iran talks face uncertainty.</p>
+    <div class="card-tags"><span class="card-tag">Geopolitics</span><span class="card-tag">Oil &amp; Energy</span><span class="card-tag">Inflation</span><span class="card-tag">Equities</span></div>
+    <span class="card-arrow">Read article &rarr;</span>
+  </a>
+
+  <a href="/archive/fed-warsh-hawkish-yen-oil-strait-hormuz.html" class="card" data-tags="Federal Reserve|Interest Rates|Inflation|Currencies">
+    <div class="card-date">June 18, 2026</div>
+    <h2>Fed's Hawkish Shift, Yen's Plunge, Oil's Dip: Market Brew</h2>
+    <p>Fed Chair Warsh signals rate hikes, yen hits 40-year low, oil prices fall as Strait of Hormuz reopens. TickerBrew analyzes market shifts and investor implications.</p>
+    <div class="card-tags"><span class="card-tag">Federal Reserve</span><span class="card-tag">Interest Rates</span><span class="card-tag">Inflation</span><span class="card-tag">Currencies</span></div>
+    <span class="card-arrow">Read article &rarr;</span>
+  </a>
+
+  <a href="/archive/fed-hawkish-shift-rattles-markets-warsh-dot.html" class="card" data-tags="Federal Reserve|Interest Rates|Equities|Geopolitics">
+    <div class="card-date">June 17, 2026</div>
+    <h2>Fed Holds Rates, Hawkish Dot Plot Sends Markets Lower</h2>
+    <p>Fed holds rates but a hawkish shift in projections and Chairman Warsh's new communication style send markets lower. Iran peace deal progresses.</p>
+    <div class="card-tags"><span class="card-tag">Federal Reserve</span><span class="card-tag">Interest Rates</span><span class="card-tag">Equities</span><span class="card-tag">Geopolitics</span></div>
+    <span class="card-arrow">Read article &rarr;</span>
+  </a>
+
+  <a href="/archive/warsh-fed-oil-supply-housing-slows.html" class="card" data-tags="Federal Reserve|Interest Rates|Oil &amp; Energy|Geopolitics|Equities">
+    <div class="card-date">June 16, 2026</div>
+    <h2>Fed's Warsh Era Begins: Rates, Balance Sheet, and Oil Market Volatility</h2>
+    <p>Fed Chair Warsh's first meeting brings uncertainty on rates and the balance sheet. Oil prices slide on Iran supply prospects, impacting global markets.</p>
+    <div class="card-tags"><span class="card-tag">Federal Reserve</span><span class="card-tag">Interest Rates</span><span class="card-tag">Oil &amp; Energy</span><span class="card-tag">Geopolitics</span><span class="card-tag">Equities</span></div>
+    <span class="card-arrow">Read article &rarr;</span>
+  </a>
+
+  <a href="/archive/warsh-fed-china-hormuz-oil-markets.html" class="card" data-tags="Federal Reserve|Interest Rates|Inflation|Geopolitics">
+    <div class="card-date">June 15, 2026</div>
+    <h2>Warsh's Fed, China Slowdown, Hormuz Reopening Shake Markets</h2>
+    <p>New Fed Chair Kevin Warsh signals policy shifts, creating market uncertainty. China's retail sales drop, revealing global demand weaknesses. The Strait of Hormuz reopening impacts oil prices.</p>
+    <div class="card-tags"><span class="card-tag">Federal Reserve</span><span class="card-tag">Interest Rates</span><span class="card-tag">Inflation</span><span class="card-tag">Geopolitics</span></div>
+    <span class="card-arrow">Read article &rarr;</span>
+  </a>
+
+  <a href="/archive/spacex-record-ipo-fed-warsh-silence-global-growth.html" class="card" data-tags="Equities|Federal Reserve|Interest Rates|Geopolitics">
+    <div class="card-date">June 12, 2026</div>
+    <h2>SpaceX IPO $2 Trillion, Fed Warsh Silence, Global Growth Cuts</h2>
+    <p>SpaceX makes a record-setting Nasdaq debut, valued over $2 trillion. New Fed Chair Kevin Warsh hints at less market guidance. Global growth forecasts cut amid rising inflation.</p>
+    <div class="card-tags"><span class="card-tag">Equities</span><span class="card-tag">Federal Reserve</span><span class="card-tag">Interest Rates</span><span class="card-tag">Geopolitics</span></div>
+    <span class="card-arrow">Read article &rarr;</span>
+  </a>
+
+  <a href="/archive/spacex-ipo-global-growth-ecb-hikes.html" class="card" data-tags="Equities|Central Banks|Interest Rates|Geopolitics">
+    <div class="card-date">June 11, 2026</div>
+    <h2>SpaceX IPO Soars, Global Growth Dims, ECB Hikes Rates</h2>
+    <p>SpaceX launches a record-setting $75 billion IPO amid regulatory scrutiny. The World Bank cuts global growth forecasts, while the ECB hikes rates to combat war-driven inflation.</p>
+    <div class="card-tags"><span class="card-tag">Equities</span><span class="card-tag">Central Banks</span><span class="card-tag">Interest Rates</span><span class="card-tag">Geopolitics</span></div>
+    <span class="card-arrow">Read article &rarr;</span>
+  </a>
+
+  <a href="/archive/trump-inflation-fed-iran-oil-ai.html" class="card" data-tags="Inflation|Geopolitics|Tech &amp; AI|Federal Reserve">
+    <div class="card-date">June 10, 2026</div>
+    <h2>Trump's Inflation View, Iran Strikes, &amp; AI IPOs Shake Global Markets</h2>
+    <p>President Trump's surprising inflation comments impact Fed rate cut expectations. US strikes Iran, sending oil prices higher and Wall Street lower. AI IPOs signal a new market frontier.</p>
+    <div class="card-tags"><span class="card-tag">Inflation</span><span class="card-tag">Geopolitics</span><span class="card-tag">Tech &amp; AI</span><span class="card-tag">Federal Reserve</span></div>
+    <span class="card-arrow">Read article &rarr;</span>
+  </a>
+
+  <a href="/archive/china-inflation-oil-geopolitics-central-banks.html" class="card" data-tags="Inflation|Geopolitics|Federal Reserve|Central Banks">
+    <div class="card-date">June 9, 2026</div>
+    <h2>Global Inflation Heats Up: China PPI, Iran Strikes, Central Bank Moves</h2>
+    <p>China's wholesale inflation hits a near 4-year high, fueled by Iran war and AI demand. Dollar steady as US strikes Iran. BOJ faces pressure for hikes.</p>
+    <div class="card-tags"><span class="card-tag">Inflation</span><span class="card-tag">Geopolitics</span><span class="card-tag">Federal Reserve</span><span class="card-tag">Central Banks</span></div>
+    <span class="card-arrow">Read article &rarr;</span>
+  </a>
+
+  <a href="/archive/ai-infrastructure-corning-surge-hormuz-tensions.html" class="card" data-tags="Equities|Federal Reserve|Geopolitics|Tech &amp; AI">
+    <div class="card-date">June 8, 2026</div>
+    <h2>Corning Soars on Amazon AI Deal, Hormuz Tensions Impact Markets</h2>
+    <p>Amazon's multi-billion dollar AI data center deal sends Corning shares soaring. Geopolitical tensions in the Strait of Hormuz keep energy and supply chain concerns elevated.</p>
+    <div class="card-tags"><span class="card-tag">Equities</span><span class="card-tag">Federal Reserve</span><span class="card-tag">Geopolitics</span><span class="card-tag">Tech &amp; AI</span></div>
+    <span class="card-arrow">Read article &rarr;</span>
+  </a>
+
+  <a href="/archive/gulf-tensions-jobs-surge-dow-record-tech-dip.html" class="card" data-tags="Geopolitics|Oil &amp; Energy|Equities|Federal Reserve">
+    <div class="card-date">June 5, 2026</div>
+    <h2>Iran-US Tensions, Strong Jobs Data, Dow Record: Market Divergence</h2>
+    <p>Iran fires warning missiles in Gulf of Oman, escalating geopolitical risk. US jobs report beats expectations, fueling Dow's record high. Tech stocks dip as investors rotate to healthcare.</p>
+    <div class="card-tags"><span class="card-tag">Geopolitics</span><span class="card-tag">Oil &amp; Energy</span><span class="card-tag">Equities</span><span class="card-tag">Federal Reserve</span></div>
+    <span class="card-arrow">Read article &rarr;</span>
+  </a>
+
+  <a href="/archive/ai-shifting-sands-tech-bets-redefined.html" class="card" data-tags="Tech &amp; AI|Equities|Crypto|Earnings">
+    <div class="card-date">June 4, 2026</div>
+    <h2>AI's Shifting Sands: Tech Bets Redefined by Layoffs, Misses, Futures</h2>
+    <p>Amazon faces engineer backlash over AI spending amid layoffs. Broadcom stumbles despite AI boom. Coinbase launches SpaceX pre-IPO futures. Private equity liquidity concerns rise.</p>
+    <div class="card-tags"><span class="card-tag">Tech &amp; AI</span><span class="card-tag">Equities</span><span class="card-tag">Crypto</span><span class="card-tag">Earnings</span></div>
+    <span class="card-arrow">Read article &rarr;</span>
+  </a>
+
+  <a href="/archive/global-slowdown-inflation-yen-tungsten-shock.html" class="card" data-tags="Federal Reserve|Interest Rates|Inflation|Geopolitics">
+    <div class="card-date">June 3, 2026</div>
+    <h2>OECD Warns Global Slowdown, Inflation Spike; Yen Intervention, Tungsten Crisis</h2>
+    <p>OECD cuts global growth outlook, warns of higher inflation due to Middle East conflict. Japan intervenes to support yen. Tungsten supply shock looms.</p>
+    <div class="card-tags"><span class="card-tag">Federal Reserve</span><span class="card-tag">Interest Rates</span><span class="card-tag">Inflation</span><span class="card-tag">Geopolitics</span></div>
+    <span class="card-arrow">Read article &rarr;</span>
+  </a>
+
+  <a href="/archive/cybersecurity-rally-geopolitical-risks-crypto-disruption.html" class="card" data-tags="Tech &amp; AI|Geopolitics|Crypto|Equities">
+    <div class="card-date">June 2, 2026</div>
+    <h2>Cybersecurity Surges, Iran Tensions Rise, Crypto Disrupts Wall Street</h2>
+    <p>Palo Alto Networks surges on strong earnings and AI demand. Iran mines the Strait of Hormuz, escalating tensions. CFTC approval of Bitcoin perpetual futures shakes traditional exchanges.</p>
+    <div class="card-tags"><span class="card-tag">Tech &amp; AI</span><span class="card-tag">Geopolitics</span><span class="card-tag">Crypto</span><span class="card-tag">Equities</span></div>
+    <span class="card-arrow">Read article &rarr;</span>
+  </a>
+
+  <a href="/archive/anthropic-ipo-ignites-ai-market-race.html" class="card" data-tags="Tech &amp; AI|Equities|Federal Reserve|Interest Rates">
+    <div class="card-date">June 1, 2026</div>
+    <h2>Anthropic IPO: AI's Public Market Test Begins, Powell Warns Fed</h2>
+    <p>AI giant Anthropic confidentially files for IPO, setting up a landmark deal. Former Fed Chair Powell warns on central bank independence. Nvidia's new chip fuels software rally.</p>
+    <div class="card-tags"><span class="card-tag">Tech &amp; AI</span><span class="card-tag">Equities</span><span class="card-tag">Federal Reserve</span><span class="card-tag">Interest Rates</span></div>
+    <span class="card-arrow">Read article &rarr;</span>
+  </a>
+
+  <a href="/archive/fed-dissent-oil-hopes-ai-market-dominance.html" class="card" data-tags="Federal Reserve|Interest Rates|Equities|Tech &amp; AI">
+    <div class="card-date">May 29, 2026</div>
+    <h2>Fed Dissent, Oil Hopes, and AI's Explosive Growth Drive Today's Markets</h2>
+    <p>Fed Governor Bowman questions rate hikes amid inflation, oil prices fall on Hormuz hopes, and Japan intervenes in yen. Dell's AI server revenue soars, while Nvidia invests in photonics.</p>
+    <div class="card-tags"><span class="card-tag">Federal Reserve</span><span class="card-tag">Interest Rates</span><span class="card-tag">Equities</span><span class="card-tag">Tech &amp; AI</span></div>
+    <span class="card-arrow">Read article &rarr;</span>
+  </a>
+  </div>
+  <div class="empty-state" id="empty-state">No articles match this filter yet.</div>
+</div>
+
+<footer>
+  <span>&copy; 2026 TickerBrew &mdash; Stay sharp. Stay brewed.</span>
+  <div class="footer-links">
+    <a href="/archive/">Archive</a>
+    <a href="/about.html">About</a>
+    <a href="/privacy.html">Privacy</a>
+    <a href="/terms.html">Terms</a>
+  </div>
+</footer>
+
+<script>
+  (function() {
+    var pills = document.querySelectorAll('.filter-pill');
+    var cards = document.querySelectorAll('.card');
+    var emptyState = document.getElementById('empty-state');
+
+    function filterByTag(tag) {
+      pills.forEach(function(p) { p.classList.remove('active'); });
+      var matchPill = Array.from(pills).find(function(p) {
+        return p.getAttribute('data-tag') === tag;
+      });
+      if (matchPill) matchPill.classList.add('active');
+
+      var visibleCount = 0;
+      cards.forEach(function(card) {
+        var cardTags = (card.getAttribute('data-tags') || '').split('|');
+        if (tag === 'all' || cardTags.indexOf(tag) !== -1) {
+          card.style.display = '';
+          visibleCount++;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+
+      emptyState.classList.toggle('show', visibleCount === 0);
+    }
+
+    pills.forEach(function(pill) {
+      pill.addEventListener('click', function() {
+        filterByTag(pill.getAttribute('data-tag'));
+      });
+    });
+
+    // Auto-activate tag from URL e.g. /archive/?tag=Tech+%26+AI
+    var urlTag = new URLSearchParams(window.location.search).get('tag');
+    if (urlTag) {
+      filterByTag(urlTag);
+    }
+  })();
+</script>
+
+</body>
+</html>
