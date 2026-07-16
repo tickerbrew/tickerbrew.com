@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="apple-touch-icon" href="/favicon.png" />
+  <title>Fed's Warsh Holds Firm on 2% Inflation Target Amid CPI Drop</title>
+  <meta name="description" content="Fed Chairman Warsh reiterates commitment to the 2% inflation target despite a surprise 0.4% CPI fall. Markets remain cautious, watching for sustained…">
+  <link rel="canonical" href="https://tickerbrew.com/archive/fed-warsh-inflation-target-cpi-cools.html">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Fed's Warsh Holds Firm on 2% Inflation Target Amid CPI Drop">
+  <meta property="og:description" content="Fed Chairman Warsh reiterates commitment to the 2% inflation target despite a surprise 0.4% CPI fall. Markets remain cautious, watching for sustained…">
+  <meta property="og:url" content="https://tickerbrew.com/archive/fed-warsh-inflation-target-cpi-cools.html">
+  <meta property="og:site_name" content="TickerBrew">
+  <meta property="og:image" content="https://tickerbrew.com/og-image.jpg">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Fed's Warsh Holds Firm on 2% Inflation Target Amid CPI Drop">
+  <meta name="twitter:description" content="Fed Chairman Warsh reiterates commitment to the 2% inflation target despite a surprise 0.4% CPI fall. Markets remain cautious, watching for sustained…">
+  <meta name="twitter:image" content="https://tickerbrew.com/og-image.jpg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#050505;--surface:#0d0d0d;--surface-2:#141414;--surface-3:#1a1a1a;
+      --border:rgba(255,255,255,.07);--border-strong:rgba(255,255,255,.14);
+      --green:#22C55E;--green-light:#4ade80;--green-dim:rgba(34,197,94,.12);--green-glow:rgba(34,197,94,.25);
+      --white:#f5f5f5;--muted:#a0a0a0;--muted-2:#666;
+      --serif:Georgia,'Times New Roman',serif;
+    }
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{background:var(--bg);color:var(--white);font-family:'Inter',sans-serif;line-height:1.75;-webkit-font-smoothing:antialiased}
+    a{color:inherit}
+    .wrap{max-width:760px;margin:0 auto;padding:0 24px}
+    .wrap-wide{max-width:1080px;margin:0 auto;padding:0 24px}
+
+    nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:90px;background:rgba(5,5,5,.88);backdrop-filter:blur(24px) saturate(180%);border-bottom:1px solid var(--border)}
+    .nav-inner{max-width:1200px;height:100%;margin:0 auto;padding:0 28px;display:flex;align-items:center;justify-content:space-between}
+    .logo-img{height:80px;width:auto;display:block}
+    .nav-links{display:flex;gap:32px;align-items:center}
+    .nav-links a{color:var(--muted);text-decoration:none;font-size:.88rem;font-weight:500;transition:color .15s ease}
+    .nav-links a:hover{color:var(--white)}
+    .nav-links a.active{color:var(--green)}
+    .nav-btn{background:var(--green)!important;color:#000!important;padding:10px 22px;border-radius:8px;font-weight:700!important;font-size:.88rem!important;white-space:nowrap;flex-shrink:0;transition:background .15s ease,transform .15s ease!important}
+    .nav-btn:hover{background:var(--green-light)!important;transform:translateY(-1px)}
+
+    .crumb{font-size:12px;color:var(--muted);padding:130px 0 0 0}
+    .crumb a{text-decoration:none}
+    .crumb a:hover{color:var(--white)}
+
+    .hero{padding:18px 0 30px 0;border-bottom:1px solid var(--border);position:relative}
+    .eyebrow{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--green-light);margin:0 0 14px 0;display:flex;align-items:center;gap:8px}
+    .eyebrow .dot{width:5px;height:5px;border-radius:50%;background:var(--green)}
+    h1.headline{font-family:var(--serif);font-size:38px;line-height:1.18;font-weight:700;color:var(--white);margin:0 0 14px 0;letter-spacing:-.01em}
+    .dek{font-size:18px;line-height:1.6;color:var(--muted);margin:0 0 22px 0;max-width:640px}
+    .meta-row{display:flex;flex-wrap:wrap;align-items:center;gap:18px;font-size:12.5px;color:var(--muted);margin-bottom:18px}
+    .meta-row .sep{color:var(--border-strong)}
+    .tags{display:flex;flex-wrap:wrap;gap:8px}
+    .tag{font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;border:1px solid var(--border-strong);color:var(--muted);padding:5px 11px;border-radius:20px;text-decoration:none;background:var(--surface)}
+    .tag:hover{border-color:var(--green);color:var(--green-light)}
+
+    .gauge{display:flex;align-items:center;gap:8px}
+    .gauge svg{display:block}
+    .gauge-label{display:flex;flex-direction:column;line-height:1.25}
+    .gauge-label .g-title{font-weight:700;color:var(--white);font-size:12.5px}
+    .gauge-label .g-sub{font-size:11px;color:var(--muted)}
+
+    .toc{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:18px 22px;margin:26px 0 8px 0}
+    .toc-title{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:0 0 12px 0}
+    .toc ol{margin:0;padding-left:20px}
+    .toc li{font-size:14.5px;line-height:1.9}
+    .toc a{text-decoration:none;color:var(--white);border-bottom:1px solid transparent}
+    .toc a:hover{color:var(--green-light);border-color:var(--green-light)}
+
+    article{padding-top:8px}
+    .section{padding:42px 0;border-bottom:1px solid var(--border);scroll-margin-top:110px}
+    .section:last-of-type{border-bottom:none}
+    .kicker{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--green-light);margin:0 0 10px 0}
+    h2.story{font-family:var(--serif);font-size:25px;line-height:1.32;font-weight:700;color:var(--white);margin:0 0 16px 0}
+    .section p{font-size:16px;line-height:1.78;color:#d4d4d4;margin:0 0 16px 0}
+    .section p:last-child{margin-bottom:0}
+    .source-link{font-size:13px;color:var(--muted)}
+    .source-link a{color:var(--green-light);text-decoration:none}
+    .source-link a:hover{text-decoration:underline}
+
+    .stat-box{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin:22px 0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:var(--surface)}
+    .stat{padding:16px 18px;border-right:1px solid var(--border)}
+    .stat:last-child{border-right:none}
+    .stat .num{font-family:var(--serif);font-size:22px;font-weight:700;color:var(--white)}
+    .stat .lab{font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-top:4px}
+
+    blockquote{margin:24px 0;padding:4px 0 4px 22px;border-left:3px solid var(--green);font-size:19px;line-height:1.55;font-style:italic;color:var(--white)}
+    blockquote cite{display:block;margin-top:10px;font-style:normal;font-size:12px;color:var(--muted)}
+
+    .why-box{background:var(--green-dim);border:1px solid var(--green-glow);border-radius:8px;padding:18px 22px;margin-top:18px}
+    .why-box .wlabel{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--green-light);margin:0 0 8px 0}
+    .why-box p{margin:0;color:#d4d4d4;font-size:15px}
+
+    .related{margin-top:20px;font-size:13px}
+    .related .rlabel{font-weight:700;color:var(--white);margin-right:8px}
+    .related a{color:var(--green-light);text-decoration:none}
+    .related a:hover{text-decoration:underline}
+    .related a:not(:last-child)::after{content:" · ";color:var(--border-strong)}
+
+    .sidebar-callout{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:20px 22px;margin:0}
+    .sidebar-callout p{font-size:14.5px;color:#d4d4d4;margin-bottom:14px}
+    .sidebar-callout p:last-child{margin-bottom:0}
+    .sidebar-callout strong{color:var(--white)}
+
+    .faq-item{border-bottom:1px solid var(--border)}
+    .faq-item:first-child{border-top:1px solid var(--border)}
+    .faq-q{width:100%;text-align:left;background:none;border:none;padding:18px 4px;font-family:var(--serif);font-size:16px;font-weight:700;color:var(--white);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px}
+    .faq-q .plus{font-size:18px;color:var(--green-light);transition:transform .2s ease;flex-shrink:0}
+    .faq-item.open .plus{transform:rotate(45deg)}
+    .faq-a{max-height:0;overflow:hidden;transition:max-height .25s ease}
+    .faq-item.open .faq-a{max-height:300px}
+    .faq-a p{padding:0 4px 18px 4px;margin:0;font-size:15px;line-height:1.7;color:#d4d4d4}
+
+    footer{max-width:1200px;margin:0 auto;padding:32px 28px;display:flex;align-items:center;justify-content:space-between;border-top:1px solid var(--border);font-size:.8rem;color:var(--muted-2)}
+    footer a{color:var(--muted-2);text-decoration:none}
+    footer a:hover{color:var(--muted)}
+    .footer-links{display:flex;gap:20px}
+
+    @media(max-width:680px){
+      nav{height:64px}.logo-img{height:54px}.nav-links{display:none}
+      .crumb{padding-top:84px}
+      h1.headline{font-size:28px}.dek{font-size:16px}
+      .stat-box{grid-template-columns:1fr}
+      .stat{border-right:none;border-bottom:1px solid var(--border)}
+      .stat:last-child{border-bottom:none}
+      footer{flex-direction:column;gap:12px;text-align:center}
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="https://tickerbrew.com">
+      <img class="logo-img" src="https://tickerbrew.com/nav-logo.png" alt="TickerBrew — Market Intelligence">
+    </a>
+    <div class="nav-links">
+      <a href="/#why">Why TickerBrew</a>
+      <a href="/#how-it-works">How It Works</a>
+      <a href="/#faq">FAQ</a>
+      <a href="/archive/" class="active">Archive</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+      <a href="/#cta" class="nav-btn">Get Free Access &rarr;</a>
+    </div>
+  </div>
+</nav>
+
+<div class="wrap">
+  <div class="crumb">
+    <a href="/archive/">Archive</a> &nbsp;/&nbsp; July 15, 2026
+  </div>
+
+  <div class="hero">
+    <p class="eyebrow"><span class="dot"></span>Morning Brew &nbsp;&middot;&nbsp; Markets &amp; Macro</p>
+    <h1 class="headline">Warsh Unwavering: Fed's 2% Inflation Target Stands Despite Cooling CPI</h1>
+    <p class="dek">Federal Reserve Chairman Kevin Warsh affirmed the central bank's steadfast commitment to its 2% inflation target, even as consumer prices unexpectedly fell in June, signaling a complex path ahead for monetary policy.</p>
+
+    <div class="meta-row">
+      <span>By the TickerBrew Markets Desk</span>
+      <span class="sep">|</span>
+      <span>July 15, 2026</span>
+      <span class="sep">|</span>
+      <span>6 min read</span>
+      <span class="sep">|</span>
+      <div class="gauge">
+        <svg width="26" height="30" viewBox="0 0 26 30" fill="none">
+          <path d="M3 4 H23 L20 25 Q20 28 16.5 28 H9.5 Q6 28 6 25 Z" stroke="#22C55E" stroke-width="1.6" fill="none"/>
+          <defs><clipPath id="cupclip"><path d="M4.2 5 H21.8 L19.2 24.6 Q19.2 26.6 16.4 26.6 H9.6 Q6.8 26.6 6.8 24.6 Z"/></clipPath></defs>
+          <rect x="3" y="9" width="20" height="20" fill="#22C55E" clip-path="url(#cupclip)"/>
+          <path d="M23 8 Q29 8 29 13 Q29 18 23 17" stroke="#22C55E" stroke-width="1.6" fill="none"/>
+        </svg>
+        <div class="gauge-label">
+          <span class="g-title">Double Shot Hawkish</span>
+          <span class="g-sub">Today's Brew Strength: Strong</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="tags">
+      <a class="tag" href="/archive/?tag=Federal%20Reserve">Federal Reserve</a>
+      <a class="tag" href="/archive/?tag=Inflation">Inflation</a>
+      <a class="tag" href="/archive/?tag=Interest%20Rates">Interest Rates</a>
+      <a class="tag" href="/archive/?tag=Central%20Banks">Central Banks</a>
+    </div>
+  </div>
+
+  <div class="toc">
+    <p class="toc-title">In Today's Issue</p>
+    <ol>
+      <li><a href="#fed-warsh-vigilance-inflation-cools">Fed Chairman Warsh Vows Vigilance as Inflation Cools</a></li>
+      <li><a href="#warsh-defends-fed-independence">Warsh Confirms 'Often' Meetings, Defends Fed Independence</a></li>
+      <li><a href="#buffett-backs-warsh-inflation-target">Warren Buffett Backs Warsh, Citing Focus on 2% Inflation Target</a></li>
+      <li><a href="#money-market-funds-defensive">Money Market Funds Turn Defensive Amid Rate Uncertainty</a></li>
+    </ol>
+  </div>
+
+  <article>
+    
+    <section class="section" id="fed-warsh-vigilance-inflation-cools">
+      <p class="kicker">Headline News</p>
+      <h2 class="story">Fed Chairman Warsh Vows Vigilance as Inflation Cools</h2>
+      <p>Federal Reserve Chairman Kevin Warsh appeared before the Senate Banking Committee today, reaffirming the central bank's unwavering dedication to achieving its 2% inflation target. His testimony followed a significant report from the Bureau of Labor Statistics, which revealed an unexpected 0.4% decline in consumer prices for June, offering a potential reprieve from persistent inflationary pressures.</p>
+      <p>Despite this encouraging disinflationary data, Chairman Warsh maintained a cautious, hawkish tone in his prepared remarks. He stressed that a single month of falling prices is insufficient to declare victory against inflation, underscoring the Fed's commitment to long-term price stability over short-term fluctuations. The market is now closely monitoring upcoming economic indicators, particularly core inflation and wage growth, for sustained trends that would signal a clear path towards the Fed's goal before any policy shifts are anticipated.</p>
+      <p>The Federal Reserve's primary objective remains to restore price stability, and Warsh's statements indicate a 'no tolerance' approach to persistently elevated inflation. This firm stance suggests that while the recent data is positive, the central bank will require more consistent evidence of disinflation before considering any adjustments to its current monetary policy trajectory, keeping investors on alert.</p>
+      
+      <div class="stat-box">
+        <div class="stat"><div class="num">0.4%</div><div class="lab">unexpected fall in consumer prices in June</div></div>
+      </div>
+      
+      
+      <div class="why-box">
+        <p class="wlabel">Why It Matters</p>
+        <p>A sustained reduction in consumer prices could provide the Federal Reserve with greater flexibility, potentially easing the pressure for future interest rate hikes and lowering borrowing costs for businesses and consumers. This environment could stimulate growth in economically sensitive sectors. However, Chairman Warsh's resolute language suggests the Fed will not alter its course until a clear, consistent trend towards its 2% inflation target is established, maintaining uncertainty in bond yields and equity markets. Investors should anticipate continued intense scrutiny of every new data release, as the Fed's credibility rests on its ability to fulfill its dual mandate.</p>
+      </div>
+    </section>
+
+    <section class="section" id="warsh-defends-fed-independence">
+      <p class="kicker">Headline News</p>
+      <h2 class="story">Warsh Confirms 'Often' Meetings, Defends Fed Independence</h2>
+      <p>During his testimony to the Senate Banking Committee, Federal Reserve Chairman Kevin Warsh acknowledged that he meets 'often' with Treasury Secretary Bessent, beyond their standard weekly discussions. This admission comes amidst heightened scrutiny regarding the central bank's autonomy from political influence, a topic that has gained prominence since Warsh's appointment.</p>
+      <p>While routine weekly meetings between the Fed chair and the Treasury secretary are a long-standing practice, the increased frequency of additional discussions has raised questions among observers about the perceived separation between monetary and fiscal policy. Chairman Warsh, however, staunchly defended the Fed's independence, emphasizing its crucial role in maintaining economic stability free from political interference.</p>
+      <p>Warsh declined to comment on whether he had engaged in direct conversations with President Donald Trump, a refusal that further fueled speculation among market participants. Investors will closely monitor any future statements or actions for indications of political pressure influencing the Fed's decision-making, as such interference could have significant implications for market stability and the global standing of the U.S. dollar.</p>
+      
+      
+      
+      <div class="why-box">
+        <p class="wlabel">Why It Matters</p>
+        <p>Any perception of political influence on the Federal Reserve can severely undermine market confidence in its independence, potentially leading to increased volatility and a risk premium on U.S. assets. A central bank that operates free from political interference is fundamental for maintaining credibility, ensuring effective monetary policy, and preventing market distortions that could jeopardize economic stability. Hints of political sway could erode the Fed's ability to manage its dual mandate of inflation and employment, potentially causing investor flight from U.S. markets and a broader loss of confidence in the financial system.</p>
+      </div>
+    </section>
+
+    <section class="section" id="buffett-backs-warsh-inflation-target">
+      <p class="kicker">Headline News</p>
+      <h2 class="story">Warren Buffett Backs Warsh, Citing Focus on 2% Inflation Target</h2>
+      <p>Legendary investor Warren Buffett publicly endorsed Kevin Warsh as the new Federal Reserve Chairman, calling him a 'good choice' for the pivotal role. Speaking on 'Squawk Box,' Buffett expressed confidence in Warsh's ability to fulfill the central bank's dual mandate of achieving a 2% inflation target and maintaining maximum employment.</p>
+      <p>Warsh assumed leadership of the Fed in May, following his nomination by President Donald Trump and confirmation by Congress, taking the helm during a period of considerable economic uncertainty. Buffett's rare public commentary on a Fed chair offers a powerful vote of confidence from one of the most respected figures in the financial world, potentially helping to stabilize investor sentiment around the new leadership.</p>
+      <p>Acknowledging the inherent challenges of the Fed's role, Buffett offered a pragmatic perspective, stating that perfection in achieving these goals is unattainable. His grounded view provides a crucial context amidst current market complexities, reinforcing the seriousness and difficulty of Warsh's mandate to steer the economy towards stability and the 2% inflation target.</p>
+      
+      <div class="stat-box">
+        <div class="stat"><div class="num">2%</div><div class="lab">Fed's inflation target</div></div>
+      </div>
+      
+      
+      <div class="why-box">
+        <p class="wlabel">Why It Matters</p>
+        <p>Warren Buffett's endorsement provides a significant vote of confidence from a highly respected market observer, which can help to alleviate investor concerns about the new Fed leadership's direction and commitment to its dual mandate. This support is particularly timely as the central bank navigates complex economic signals and faces political scrutiny, offering a measure of stability to market expectations regarding the Fed's resolve. It signals to the broader investment community that Warsh is perceived as a capable and serious leader, well-equipped to guide the economy through its current challenges.</p>
+      </div>
+    </section>
+
+    <section class="section" id="money-market-funds-defensive">
+      <p class="kicker">Under the Radar</p>
+      <h2 class="story">Money Market Funds Turn Defensive Amid Rate Uncertainty</h2>
+      <p>Money market funds are increasingly adopting a cautious stance, evidenced by a notable decrease in their weighted average maturity (WAM). For the week ending July 10, the WAM, a key indicator of portfolio duration, fell to 38 days, down from 42 days just one month prior, according to the Crane Money Fund Average, a leading industry benchmark.</p>
+      <p>This shortening of duration reflects persistent uncertainty among institutional investors regarding the Federal Reserve's future interest rate policy path, despite the recent unexpected decline in consumer prices. The move indicates that even short-term investors are actively hedging against potential interest rate volatility and an unclear trajectory for monetary policy.</p>
+      <p>The collective shift towards shorter duration suggests a broad institutional belief that the interest rate outlook remains unpredictable. This prompts a strategic move towards greater liquidity and safety within their portfolios, prioritizing capital preservation over yield in an environment marked by ongoing economic and policy ambiguities.</p>
+      
+      <div class="stat-box">
+        <div class="stat"><div class="num">38 days</div><div class="lab">weighted average maturity for money market funds (July 10)</div></div>
+        <div class="stat"><div class="num">42 days</div><div class="lab">weighted average maturity for money market funds (one month prior)</div></div>
+      </div>
+      
+      
+      <div class="why-box">
+        <p class="wlabel">Why It Matters</p>
+        <p>This defensive posture within money markets signals that institutional investors are not fully convinced that the Federal Reserve's rate path is clear, despite recent disinflationary data. A shorter duration reduces exposure to potential rising rates, suggesting a collective expectation of continued rate uncertainty or even possible future hikes, which could impact broader liquidity and short-term funding costs across the financial system. This action provides a tangible insight into market sentiment, indicating a strong preference for flexibility and safety over higher yields in a volatile and uncertain economic landscape.</p>
+      </div>
+    </section>
+    
+    <section class="section">
+      <p class="kicker">Smart Money Watch</p>
+      <h2 class="story">Where the Big Books Are Positioned</h2>
+      <div class="sidebar-callout">
+        <p><strong>Rates:</strong> Institutional investors are actively de-risking in short-term fixed income, as evidenced by the drop in weighted average maturity for money market funds to 38 days. This move signifies a collective shift towards liquidity and away from duration risk, reflecting a lack of conviction in the Fed's forward guidance despite recent CPI data.</p>
+        <p><strong>Market Sentiment:</strong> The defensive positioning in money markets suggests funds are preparing for potential shifts in policy or market conditions, prioritizing capital preservation over yield. This trend indicates broader uncertainty about the trajectory of interest rates and the potential for renewed inflation pressures, demanding a cautious approach to cash management.</p>
+      </div>
+    </section>
+    
+    <section class="section" id="faq" style="border-bottom:none;">
+      <p class="kicker">FAQ</p>
+      <h2 class="story">Frequently Asked Questions</h2>
+      
+      <div class="faq-item open">
+        <button class="faq-q">What is the Federal Reserve's current inflation target? <span class="plus">+</span></button>
+        <div class="faq-a"><p>The Federal Reserve's unwavering commitment is to restore price stability to its 2% inflation target, a goal that Chairman Kevin Warsh reiterated in his recent testimony before the Senate Banking Committee.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">How did consumer prices change in June? <span class="plus">+</span></button>
+        <div class="faq-a"><p>Consumer prices unexpectedly fell by 0.4% in June, offering a glimmer of hope for easing inflationary pressures. However, Fed Chairman Warsh emphasized that a single month of disinflation is not enough to declare victory.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Why is the Fed's independence from political influence important? <span class="plus">+</span></button>
+        <div class="faq-a"><p>The Federal Reserve's independence is crucial for maintaining market confidence, ensuring effective monetary policy, and preventing distortions that could undermine economic stability. Perceived political influence can erode credibility and lead to market volatility.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">What does the defensive posture of money market funds indicate? <span class="plus">+</span></button>
+        <div class="faq-a"><p>Money market funds shortening their weighted average maturity to 38 days indicates that institutional investors are turning defensive. This reflects lingering uncertainty about the Fed's future rate policy path and a collective move towards greater liquidity and safety amid potential interest rate volatility.</p></div>
+      </div>
+    </section>
+    
+    <section class="section" style="border-bottom:none;">
+      <p class="kicker">Related Coverage</p>
+      <h2 class="story">More From TickerBrew</h2>
+      <div class="related"><a href="https://tickerbrew.com/archive/fed-warsh-data-tech-tumble-jobs-report.html">Fed's Warsh Questions Data, Tech Plunges Before Jobs Report</a><a href="https://tickerbrew.com/archive/geopolitical-tensions-inflation-fed-rethink-markets.html">US Strikes Iran, Inflation Surges, Fed Policy Under Scrutiny</a></div>
+    </section>
+  </article>
+</div>
+
+<footer>
+  <span>&copy; 2026 TickerBrew &mdash; Stay sharp. Stay brewed.</span>
+  <div class="footer-links">
+    <a href="/archive/">Archive</a>
+    <a href="/about.html">About</a>
+    <a href="/privacy.html">Privacy</a>
+    <a href="/terms.html">Terms</a>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('.faq-q').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      btn.parentElement.classList.toggle('open');
+    });
+  });
+</script>
+
+</body>
+</html>
